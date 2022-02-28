@@ -1,4 +1,4 @@
 package com.example.restaurantBookingService.models;
 
-public class Table {
+public class RestaurantTable {
 }
