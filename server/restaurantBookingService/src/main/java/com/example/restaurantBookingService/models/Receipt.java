@@ -13,7 +13,7 @@ public class Receipt {
     @Column(name = "total_cost")
     private double totalCost;
 
-
+    @OneToOne(mappedBy = "receipt")
     private Booking booking;
 
     public Receipt(double totalCost, Booking booking) {

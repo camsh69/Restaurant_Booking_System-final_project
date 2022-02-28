@@ -2,6 +2,9 @@ package com.example.restaurantBookingService.models;
 
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -16,7 +19,14 @@ public class RestaurantTable {
     @Column(name = "cover")
     private int covers;
 
-
+    @ManyToMany
+    @JsonIgnoreProperties({"tables"})
+    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
+    @JoinTable(
+            name = "tables_bookings",
+            joinColumns = {@JoinColumn(name = "table_id", nullable = false, updatable = false)},
+            inverseJoinColumns = {@JoinColumn(name = "booking_id", nullable = false, updatable = false)}
+    )
     private List<Booking> bookings;
 
     public RestaurantTable(int covers, List<Booking> bookings) {
