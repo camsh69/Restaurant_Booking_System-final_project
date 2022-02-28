@@ -1,18 +1,50 @@
 package com.example.restaurantBookingService.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.Cascade;
+
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name="bookings")
 public class Booking {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @JsonIgnoreProperties(value="bookings")
+    @ManyToOne
+    @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
+
+    @Column(name="start_time")
     private LocalDateTime startTime;
+
+    @Column(name="end_time")
     private LocalDateTime endTime;
+
+    @Column(name="diners")
     private int diners;
+
+    @Column(name="message")
     private String message;
+
+    @JsonIgnoreProperties(value="bookings")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="receipt_id", referencedColumnName = "id")
     private Receipt receipt;
+
+    @JsonIgnoreProperties(value="bookings")
+    @ManyToMany
+    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
+    @JoinTable(
+            joinColumns = {@JoinColumn(name = "booking_id", nullable = false, updatable = false)},
+            inverseJoinColumns = {@JoinColumn(name = "table_id", nullable = false, updatable = false)}
+    )
     private List<RestaurantTable> tables;
 
     public Booking() {
