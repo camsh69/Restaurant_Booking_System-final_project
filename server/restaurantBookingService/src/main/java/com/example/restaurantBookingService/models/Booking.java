@@ -17,7 +17,7 @@ public class Booking {
     private Long id;
 
     @JsonIgnoreProperties(value="bookings")
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
 
