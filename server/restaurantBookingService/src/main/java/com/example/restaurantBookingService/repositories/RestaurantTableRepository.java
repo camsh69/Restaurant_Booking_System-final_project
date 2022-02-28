@@ -1,4 +1,4 @@
 package com.example.restaurantBookingService.repositories;
 
-public interface TableRepository {
+public interface RestaurantTableRepository {
 }
