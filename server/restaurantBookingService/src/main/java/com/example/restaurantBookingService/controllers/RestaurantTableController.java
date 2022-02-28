@@ -1,4 +1,4 @@
 package com.example.restaurantBookingService.controllers;
 
-public class TableController {
+public class RestaurantTableController {
 }
