@@ -43,9 +43,9 @@ public class Booking {
     @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     @JoinTable(
             joinColumns = {@JoinColumn(name = "booking_id", nullable = false, updatable = false)},
-            inverseJoinColumns = {@JoinColumn(name = "table_id", nullable = false, updatable = false)}
+            inverseJoinColumns = {@JoinColumn(name = "restaurant_table_id", nullable = false, updatable = false)}
     )
-    private List<RestaurantTable> tables;
+    private List<RestaurantTable> restaurantTables;
 
     public Booking() {
     }
@@ -57,7 +57,7 @@ public class Booking {
         this.diners = diners;
         this.message = message;
         this.receipt = null;
-        this.tables = new ArrayList<>();
+        this.restaurantTables = new ArrayList<>();
     }
 
     public Long getId() {
@@ -117,10 +117,10 @@ public class Booking {
     }
 
     public List<RestaurantTable> getTables() {
-        return tables;
+        return restaurantTables;
     }
 
-    public void setTables(List<RestaurantTable> tables) {
-        this.tables = tables;
+    public void setTables(List<RestaurantTable> restaurantTables) {
+        this.restaurantTables = restaurantTables;
     }
 }

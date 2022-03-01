@@ -6,10 +6,11 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="tables")
+@Table(name="restaurant_tables")
 public class RestaurantTable {
 
     @Id
@@ -20,18 +21,18 @@ public class RestaurantTable {
     private int covers;
 
     @ManyToMany
-    @JsonIgnoreProperties({"tables"})
+    @JsonIgnoreProperties({"restaurant_tables"})
     @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     @JoinTable(
-            name = "tables_bookings",
-            joinColumns = {@JoinColumn(name = "table_id", nullable = false, updatable = false)},
+            name = "restaurant_tables_bookings",
+            joinColumns = {@JoinColumn(name = "restaurant_tables_id", nullable = false, updatable = false)},
             inverseJoinColumns = {@JoinColumn(name = "booking_id", nullable = false, updatable = false)}
     )
     private List<Booking> bookings;
 
-    public RestaurantTable(int covers, List<Booking> bookings) {
+    public RestaurantTable(int covers) {
         this.covers = covers;
-        this.bookings = bookings;
+        this.bookings = new ArrayList<>();
     }
 
     public RestaurantTable(){}
