@@ -10,4 +10,6 @@ import java.util.List;
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
     List<Customer> findByOrderByBookings();
+
+    List<Customer> findByLoyaltyCard(String loyaltyCard);
 }
