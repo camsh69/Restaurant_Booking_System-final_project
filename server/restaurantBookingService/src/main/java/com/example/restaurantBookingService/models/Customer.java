@@ -1,7 +1,11 @@
 package com.example.restaurantBookingService.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "customers")
@@ -19,12 +23,13 @@ public class Customer {
     @Column(name = "email_address")
     private String email;
 
-    @OneToOne
-    @JoinColumn(name = "loyaltyCard_id", referencedColumnName = "id")
-    private LoyaltyCard loyaltyCard;
-//
-//    @OneToOne(mappedBy = "customer", cascade = CascadeType.ALL)
-//    private LoyaltyCard loyaltyCard;
+    @Column(name= "loyalty_card")
+    private String loyaltyCard;
+
+    @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
+    @JsonIgnoreProperties({"customer"})
+    private List<Booking>bookings;
+
 
     public Customer() {
     }
@@ -33,14 +38,24 @@ public class Customer {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.email = email;
+        this.loyaltyCard = null;
+        this.bookings = new ArrayList<>();
 
     }
 
-    public LoyaltyCard getLoyaltyCard() {
+    public List<Booking> getBookings() {
+        return bookings;
+    }
+
+    public void setBookings(List<Booking> bookings) {
+        this.bookings = bookings;
+    }
+
+    public String getLoyaltyCard() {
         return loyaltyCard;
     }
 
-    public void setLoyaltyCard(LoyaltyCard loyaltyCard) {
+    public void setLoyaltyCard(String loyaltyCard) {
         this.loyaltyCard = loyaltyCard;
     }
 
