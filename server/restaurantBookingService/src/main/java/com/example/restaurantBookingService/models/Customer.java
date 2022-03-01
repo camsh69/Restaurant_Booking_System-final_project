@@ -1,11 +1,30 @@
 package com.example.restaurantBookingService.models;
 
-public class Customer {
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "customers")
+public class Customer {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "phone_number")
     private String phoneNumber;
+
+    @Column(name = "email_address")
     private String email;
+
+    @OneToOne
+    @JoinColumn(name = "loyaltyCard_id", referencedColumnName = "id")
+    private LoyaltyCard loyaltyCard;
+//
+//    @OneToOne(mappedBy = "customer", cascade = CascadeType.ALL)
+//    private LoyaltyCard loyaltyCard;
 
     public Customer() {
     }
@@ -14,8 +33,16 @@ public class Customer {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.email = email;
+
     }
 
+    public LoyaltyCard getLoyaltyCard() {
+        return loyaltyCard;
+    }
+
+    public void setLoyaltyCard(LoyaltyCard loyaltyCard) {
+        this.loyaltyCard = loyaltyCard;
+    }
 
     public Long getId() {
         return id;
