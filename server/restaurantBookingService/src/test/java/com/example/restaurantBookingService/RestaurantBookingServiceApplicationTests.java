@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
 
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
@@ -117,6 +118,13 @@ class RestaurantBookingServiceApplicationTests {
 		List<Customer> foundCustomer = customerRepository.findByOrderByBookings();
 		assertEquals("Joe Bloggs", foundCustomer.get(0).getName());
 
+	}
+
+	@Test
+	public void canFindCustomerByLoyaltyCard(){
+		List<Customer> foundCustomer = customerRepository.findByLoyaltyCard("036758");
+    	assertEquals("Campbell", foundCustomer.get(0).getName());
+		assertThat("greater than 0", foundCustomer.size() > 0);
 	}
 
 
