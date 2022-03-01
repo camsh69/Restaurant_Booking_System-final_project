@@ -42,22 +42,23 @@ public class Booking {
     @ManyToMany
     @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     @JoinTable(
+            name = "restaurant_tables_bookings",
             joinColumns = {@JoinColumn(name = "booking_id", nullable = false, updatable = false)},
-            inverseJoinColumns = {@JoinColumn(name = "restaurant_table_id", nullable = false, updatable = false)}
+            inverseJoinColumns = {@JoinColumn(name = "restaurant_tables_id", nullable = false, updatable = false)}
     )
     private List<RestaurantTable> restaurantTables;
 
     public Booking() {
     }
 
-    public Booking(Customer customer, LocalDateTime startTime, LocalDateTime endTime, int diners, String message) {
+    public Booking(Customer customer, LocalDateTime startTime, LocalDateTime endTime, int diners, ArrayList<RestaurantTable> restaurantTables, String message) {
         this.customer = customer;
         this.startTime = startTime;
         this.endTime = endTime;
         this.diners = diners;
         this.message = message;
         this.receipt = null;
-        this.restaurantTables = new ArrayList<>();
+        this.restaurantTables = restaurantTables;
     }
 
     public Long getId() {
@@ -122,5 +123,9 @@ public class Booking {
 
     public void setTables(List<RestaurantTable> restaurantTables) {
         this.restaurantTables = restaurantTables;
+    }
+
+    public void addRestaurantTables(RestaurantTable restaurantTable) {
+        this.restaurantTables.add(restaurantTable);
     }
 }
