@@ -2,6 +2,7 @@ package com.example.restaurantBookingService.models;
 
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cascade;
 
@@ -21,7 +22,7 @@ public class RestaurantTable {
     private int covers;
 
     @ManyToMany
-    @JsonIgnoreProperties({"restaurant_tables"})
+   @JsonBackReference
     @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     @JoinTable(
             name = "restaurant_tables_bookings",

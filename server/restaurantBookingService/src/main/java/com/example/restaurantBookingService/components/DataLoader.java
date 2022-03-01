@@ -1,6 +1,7 @@
 package com.example.restaurantBookingService.components;
 
 import com.example.restaurantBookingService.models.Customer;
+import com.example.restaurantBookingService.models.RestaurantTable;
 import com.example.restaurantBookingService.repositories.BookingRepository;
 import com.example.restaurantBookingService.repositories.CustomerRepository;
 import com.example.restaurantBookingService.repositories.RestaurantTableRepository;
@@ -40,6 +41,18 @@ public class DataLoader implements ApplicationRunner {
         Customer customer5 = new Customer("Daniel Thomas", "078843270", "Daniel@gmail.com");
         customer5.setLoyaltyCard("765832");
         customerRepository.save(customer5);
+
+        RestaurantTable table1 = new RestaurantTable(4);
+        restaurantTableRepository.save(table1);
+
+        RestaurantTable table2 = new RestaurantTable(6);
+        restaurantTableRepository.save(table2);
+
+        RestaurantTable table3 = new RestaurantTable(10);
+        restaurantTableRepository.save(table3);
+
+        RestaurantTable table4 = new RestaurantTable(3);
+        restaurantTableRepository.save(table4);
 
 
     }
