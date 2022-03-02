@@ -113,7 +113,7 @@ class RestaurantBookingServiceApplicationTests {
 		ArrayList<RestaurantTable> restaurantTables3 = new ArrayList<>();
 		restaurantTables3.add(table5);
 		restaurantTables3.add(table6);
-		Booking booking3 = new Booking(customer2, startTime2 , endTime2 , 4, restaurantTables, "No peanuts");
+		Booking booking3 = new Booking(customer2, startTime2 , endTime2 , 4, restaurantTables3, "No peanuts");
 		bookingRepository.save(booking3);
 		List<Customer> foundCustomer = customerRepository.findByOrderByBookings();
 		assertEquals("Joe Bloggs", foundCustomer.get(0).getName());
