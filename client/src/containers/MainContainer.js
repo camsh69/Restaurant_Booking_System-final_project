@@ -12,7 +12,7 @@ const MainContainer = () => {
       const request = new Request();
       const customerPromise = request.get('/api/customers')
       const bookingPromise = request.get('/api/bookings')
-      const restaurantTablePromise = request.get('/api/restaurantTables')
+      const restaurantTablePromise = request.get('/api/tables')
   
       Promise.all([customerPromise, bookingPromise, restaurantTablePromise])
       .then((data) => {
