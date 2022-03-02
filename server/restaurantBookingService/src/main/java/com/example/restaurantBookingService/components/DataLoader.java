@@ -76,8 +76,15 @@ public class DataLoader implements ApplicationRunner {
         LocalDateTime startTime2 = LocalDateTime.parse("2022-03-02T16:00:00.000000");
         LocalDateTime endTime2 = LocalDateTime.parse("2022-03-02T18:00:00.000000");
         ArrayList<RestaurantTable> restaurantTables2 = new ArrayList<>();
+        restaurantTables2.add(table3);
         Booking booking2 = new Booking(customer4, startTime2 , endTime2 , 10, restaurantTables2, "");
         bookingRepository.save(booking2);
 
+        LocalDateTime startTime3 = LocalDateTime.parse("2022-03-01T16:00:00.000000");
+        LocalDateTime endTime3 = LocalDateTime.parse("2022-03-01T18:00:00.000000");
+        ArrayList<RestaurantTable> restaurantTables3 = new ArrayList<>();
+        restaurantTables3.add(table3);
+        Booking booking3 = new Booking(customer5, startTime3 , endTime3 , 4, restaurantTables3, "");
+        bookingRepository.save(booking3);
     }
 }

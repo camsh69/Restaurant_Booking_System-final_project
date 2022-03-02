@@ -9,7 +9,5 @@ import java.util.List;
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
-    List<Customer> findByOrderByBookings();
-
     List<Customer> findByLoyaltyCard(String loyaltyCard);
 }
