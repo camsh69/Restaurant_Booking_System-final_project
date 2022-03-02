@@ -3,7 +3,7 @@ import { Calendar, Views } from 'react-big-calendar';
 import moment from 'moment';
 
 
-const ViewBookings = ({bookings, tables}) => {
+const ViewBookings = ({bookings}) => {
   return (
     <div>
         View Bookings 

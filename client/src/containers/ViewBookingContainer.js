@@ -1,11 +1,11 @@
 import React from 'react';
 import ViewBookings from '../components/ViewBookingsComponent/ViewBookings';
 
-const ViewBookingContainer = ({booking, tables}) => {
+const ViewBookingContainer = ({booking}) => {
   return (
     <>
         <div>ViewBookingContainer</div>
-        <ViewBookings booking={booking} tables={tables}/>
+        <ViewBookings booking={booking} />
     </>  
   )
 }
