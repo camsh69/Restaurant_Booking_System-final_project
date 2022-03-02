@@ -1,5 +1,6 @@
 package com.example.restaurantBookingService.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cascade;
 
@@ -16,8 +17,9 @@ public class Booking {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @JsonIgnoreProperties(value="bookings")
-    @ManyToOne(fetch = FetchType.LAZY)
+//    @JsonIgnoreProperties(value="bookings")
+    @JsonBackReference
+    @ManyToOne
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
 

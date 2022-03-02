@@ -8,7 +8,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.concurrent.Callable;
 
 @RestController
 public class CustomerController {
@@ -22,7 +21,7 @@ public class CustomerController {
         if (loyaltyCard != null) {
             return new ResponseEntity<>(customerRepository.findByLoyaltyCard(loyaltyCard), HttpStatus.OK);
         }
-        return new ResponseEntity<>(customerRepository.findByOrderByBookings(), HttpStatus.OK);
+        return new ResponseEntity<>(customerRepository.findAll(), HttpStatus.OK);
     }
 
     @GetMapping(value = "/customers/{id}")

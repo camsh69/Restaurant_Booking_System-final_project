@@ -1,6 +1,7 @@
 package com.example.restaurantBookingService.models;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
@@ -27,7 +28,8 @@ public class Customer{
     private String loyaltyCard;
 
     @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
-    @JsonIgnoreProperties({"customer"})
+    @JsonBackReference
+//    @JsonIgnoreProperties({"customer"})
     private List<Booking>bookings;
 
 
