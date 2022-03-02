@@ -77,7 +77,7 @@ class RestaurantBookingServiceApplicationTests {
 
 	@Test
 	public void canGetListOfCustomersByFrequencyBooking(){
-		Customer customer1 = new Customer("Joe Bloggs", "012345678", "joe@gmail.com");
+		Customer customer1 = new Customer("Joe Bloogs", "012345678", "joe@gmail.com");
 		customerRepository.save(customer1);
 		RestaurantTable table1 = new RestaurantTable(4);
 		restaurantTableRepository.save(table1);
@@ -94,6 +94,7 @@ class RestaurantBookingServiceApplicationTests {
 		restaurantTableRepository.save(table3);
 		RestaurantTable table4 = new RestaurantTable(6);
 		restaurantTableRepository.save(table4);
+
 		LocalDateTime startTime1 = LocalDateTime.parse("2022-02-01T19:00:00.000000");
 		LocalDateTime endTime1 = LocalDateTime.parse("2022-04-01T21:00:00.000000");
 		ArrayList<RestaurantTable> restaurantTables1 = new ArrayList<>();
