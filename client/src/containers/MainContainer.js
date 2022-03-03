@@ -29,6 +29,37 @@ const MainContainer = () => {
         setRestaurantTables(data[2])
       })
     }
+
+    const findCustomerById = function(id){
+    return customers.find((customer) => {
+      return customer.id === parseInt(id);
+    })
+  }
+
+  const findBookingById = function(id){
+    return bookings.find((booking) => {
+      return booking.id === parseInt(id);
+    })
+  }
+
+
+
+  const handleBookingDelete = function(id){
+    const request = new Request();
+    const url = "/api/bookings/" + id
+    request.delete(url)
+  }
+
+  const handleBookingPost = function(booking){
+    const request = new Request();
+    request.post("/api/bookings", booking)
+  }
+
+  const handleCustomerPost = function(customer){
+    const request = new Request();
+    request.post("/api/customers", customer)
+  }
+
   
     useEffect(()=>{
       requestAll()
