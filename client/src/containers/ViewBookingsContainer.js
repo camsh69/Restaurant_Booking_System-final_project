@@ -1,10 +1,10 @@
 import React from 'react';
 import ViewBookings from '../components/ViewBookingsComponent/ViewBookings';
 
-const ViewBookingContainer = ({booking}) => {
+const ViewBookingContainer = ({bookings}) => {
   return (
     <>
-        <ViewBookings booking={booking} />
+        <ViewBookings bookings={bookings} />
     </>  
   )
 }

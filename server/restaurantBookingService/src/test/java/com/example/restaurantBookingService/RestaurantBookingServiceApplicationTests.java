@@ -8,11 +8,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.Callable;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -58,8 +55,8 @@ class RestaurantBookingServiceApplicationTests {
 		restaurantTableRepository.save(table3);
 		RestaurantTable table4 = new RestaurantTable(6);
 		restaurantTableRepository.save(table4);
-		LocalDateTime startTime = LocalDateTime.parse("2022-03-01T19:00:00.000000");
-		LocalDateTime endTime = LocalDateTime.parse("2022-03-01T21:00:00.000000");
+		String startTime = "2022-03-01T19:00:00.000000";
+		String endTime = "2022-03-01T21:00:00.000000";
 		ArrayList<RestaurantTable> restaurantTables = new ArrayList<>();
 		restaurantTables.add(table3);
 		restaurantTables.add(table4);
@@ -83,8 +80,8 @@ class RestaurantBookingServiceApplicationTests {
 		restaurantTableRepository.save(table1);
 		RestaurantTable table2 = new RestaurantTable(6);
 		restaurantTableRepository.save(table2);
-		LocalDateTime startTime = LocalDateTime.parse("2022-03-01T19:00:00.000000");
-		LocalDateTime endTime = LocalDateTime.parse("2022-03-01T21:00:00.000000");
+		String startTime = "2022-03-01T19:00:00.000000";
+		String endTime = "2022-03-01T21:00:00.000000";
 		ArrayList<RestaurantTable> restaurantTables = new ArrayList<>();
 		restaurantTables.add(table1);
 		restaurantTables.add(table2);
@@ -95,8 +92,8 @@ class RestaurantBookingServiceApplicationTests {
 		RestaurantTable table4 = new RestaurantTable(6);
 		restaurantTableRepository.save(table4);
 
-		LocalDateTime startTime1 = LocalDateTime.parse("2022-02-01T19:00:00.000000");
-		LocalDateTime endTime1 = LocalDateTime.parse("2022-04-01T21:00:00.000000");
+		String startTime1 = "2022-02-01T19:00:00.000000";
+		String endTime1 = "2022-04-01T21:00:00.000000";
 		ArrayList<RestaurantTable> restaurantTables1 = new ArrayList<>();
 		restaurantTables1.add(table3);
 		restaurantTables1.add(table4);
@@ -109,8 +106,8 @@ class RestaurantBookingServiceApplicationTests {
 		restaurantTableRepository.save(table5);
 		RestaurantTable table6 = new RestaurantTable(6);
 		restaurantTableRepository.save(table6);
-		LocalDateTime startTime2 = LocalDateTime.parse("2022-03-01T19:00:00.000000");
-		LocalDateTime endTime2 = LocalDateTime.parse("2022-03-01T21:00:00.000000");
+		String startTime2 = "2022-03-01T19:00:00.000000";
+		String endTime2 = "2022-03-01T21:00:00.000000";
 		ArrayList<RestaurantTable> restaurantTables3 = new ArrayList<>();
 		restaurantTables3.add(table5);
 		restaurantTables3.add(table6);
