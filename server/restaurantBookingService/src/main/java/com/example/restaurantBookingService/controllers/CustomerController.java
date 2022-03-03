@@ -3,6 +3,8 @@ package com.example.restaurantBookingService.controllers;
 import com.example.restaurantBookingService.models.Customer;
 import com.example.restaurantBookingService.repositories.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.jpa.domain.JpaSort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +23,7 @@ public class CustomerController {
         if (loyaltyCard != null) {
             return new ResponseEntity<>(customerRepository.findByLoyaltyCard(loyaltyCard), HttpStatus.OK);
         }
-        return new ResponseEntity<>(customerRepository.findAll(), HttpStatus.OK);
+        return new ResponseEntity<>(customerRepository.findCustomers(), HttpStatus.OK);
     }
 
     @GetMapping(value = "/customers/{id}")
