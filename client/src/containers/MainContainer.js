@@ -40,7 +40,7 @@ const MainContainer = () => {
       <NavBar/>
       <Routes>
         <Route index element={<SplashScreenContainer />} />
-        <Route path="/view" element={<ViewBookingContainer bookings={bookings} />} />
+        <Route path="/view" element={<ViewBookingContainer bookings={bookings} tables={restaurantTables}/>} />
         <Route path="/add" element={<BookingFormContainer />} />
         <Route path="/edit" element={<EditBookingContainer />} />
         <Route path="/clients" element={<ClientListContainer />} />
