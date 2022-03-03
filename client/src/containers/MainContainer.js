@@ -1,5 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import Request from '../helpers/request';
+import BookingFormContainer from './BookingFormContainer';
+import ClientListContainer from './ClientListContainer';
+import EditBookingContainer from './EditBookingContainer';
+import SplashScreenContainer from './SplashScreenContainer';
+import ViewBookingContainer from './ViewBookingContainer';
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import NavBar from '../components/NavBar';
+
 
 
 const MainContainer = () => {
@@ -28,7 +36,16 @@ const MainContainer = () => {
 
 
   return (
-    <div>MainContainer</div>
+    <Router>
+      <NavBar/>
+      <Routes>
+        <Route index element={<SplashScreenContainer />} />
+        <Route path="/view" element={<ViewBookingContainer bookings={bookings} />} />
+        <Route path="/add" element={<BookingFormContainer />} />
+        <Route path="/edit" element={<EditBookingContainer />} />
+        <Route path="/clients" element={<ClientListContainer />} />
+      </Routes>
+    </Router>
   )
 }
 
