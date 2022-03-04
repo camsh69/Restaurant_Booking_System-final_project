@@ -39,6 +39,7 @@ const MainContainer = () => {
   const handleCustomerPost = function(customer){
     const request = new Request();
     request.post("/api/customers", customer)
+    .then(() => requestAll())
   }
 
   const findBookingById = function(id){
@@ -51,16 +52,19 @@ const MainContainer = () => {
     const request = new Request();
     const url = "/api/bookings/" + id
     request.delete(url)
+    .then(() => requestAll())
   }
 
   const handleBookingPost = function(booking){
     const request = new Request();
     request.post("/api/bookings", booking)
+    .then(() => requestAll())
   }
 
   const handleBookingUpdate = function(booking){
     const request = new Request();
     request.patch('/api/bookings/' + booking.id, booking)
+    .then(() => requestAll())
   }
 
 
