@@ -1,8 +1,9 @@
 import React from 'react';
+import EditBooking from '../components/EditBookingComponent/EditBooking';
 
-const EditBookingContainer = () => {
+const EditBookingContainer = ({bookings, bookingUpdate}) => {
   return (
-    <div>EditBookingContainer</div>
+    <EditBooking bookings={bookings} bookingUpdate={bookingUpdate}/>
   )
 }
 

@@ -1,8 +1,9 @@
 import React from 'react';
+import ClientList from '../components/ClientListComponent/ClientList';
 
-const ClientListContainer = () => {
+const ClientListContainer = ({customers}) => {
   return (
-    <div>ClientListContainer</div>
+    <ClientList customers={customers} />
   )
 }
 
