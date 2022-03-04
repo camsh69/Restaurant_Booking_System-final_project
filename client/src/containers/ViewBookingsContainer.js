@@ -9,21 +9,45 @@ const ViewBookingContainer = ({bookings, tables}) => {
       events.push({
         start: new Date(booking.startTime),
         end: new Date(booking.endTime),
-        title: "Booking Ref: " + booking.id + "," + '\n' + booking.customer.name,
-        resourceId: booking.tables[0].id
+        title: `Booking Ref: ${booking.id},
+        ${booking.customer.name}`,
+        resourceId: booking.tables[0].id,
+        ref: booking.id,
+        contact: booking.customer.name,
+        message: booking.message, 
+        diners: booking.diners,
+        loyaltyCard: booking.customer.loyaltyCard,
+        email: booking.customer.email,
+        phone: booking.customer.phoneNumber
       })
     } else {
       events.push({
         start: new Date(booking.startTime),
         end: new Date(booking.endTime),
-        title: "Booking Ref: " + booking.id + "," + '\n' + booking.customer.name,
-        resourceId: booking.tables[0].id
+        title: `Booking Ref: ${booking.id},
+        ${booking.customer.name}`,
+        resourceId: booking.tables[0].id,
+        ref: booking.id,
+        contact: booking.customer.name,
+        message: booking.message, 
+        diners: booking.diners,
+        loyaltyCard: booking.customer.loyaltyCard,
+        email: booking.customer.email,
+        phone: booking.customer.phoneNumber
       },
       {
         start: new Date(booking.startTime),
         end: new Date(booking.endTime),
-        title: "Booking Ref: " + booking.id + "," + '\n' + booking.customer.name,
-        resourceId: booking.tables[1].id
+        title: `Booking Ref: ${booking.id},
+        ${booking.customer.name}`,
+        resourceId: booking.tables[1].id,
+        ref: booking.id,
+        contact: booking.customer.name,
+        message: booking.message, 
+        diners: booking.diners,
+        loyaltyCard: booking.customer.loyaltyCard,
+        email: booking.customer.email,
+        phone: booking.customer.phoneNumber
       })
     }
   })
