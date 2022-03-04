@@ -35,14 +35,17 @@ const MainContainer = () => {
       return customer.id === parseInt(id);
     })
   }
+  
+  const handleCustomerPost = function(customer){
+    const request = new Request();
+    request.post("/api/customers", customer)
+  }
 
   const findBookingById = function(id){
     return bookings.find((booking) => {
       return booking.id === parseInt(id);
     })
   }
-
-
 
   const handleBookingDelete = function(id){
     const request = new Request();
@@ -55,10 +58,13 @@ const MainContainer = () => {
     request.post("/api/bookings", booking)
   }
 
-  const handleCustomerPost = function(customer){
+  const handleBookingUpdate = function(booking){
     const request = new Request();
-    request.post("/api/customers", customer)
+    request.patch('/api/bookings/' + booking.id, booking)
   }
+
+
+
 
   
     useEffect(()=>{
@@ -72,9 +78,9 @@ const MainContainer = () => {
       <Routes>
         <Route index element={<SplashScreenContainer />} />
         <Route path="/view" element={<ViewBookingContainer bookings={bookings} />} />
-        <Route path="/add" element={<BookingFormContainer />} />
-        <Route path="/edit" element={<EditBookingContainer />} />
-        <Route path="/clients" element={<ClientListContainer />} />
+        <Route path="/add" element={<BookingFormContainer newBooking={booking => handleBookingPost(booking)} newClient={client => handleCustomerPost(client)}/>} />
+        <Route path="/edit" element={<EditBookingContainer bookings={bookings} bookingUpdate={(booking) => (handleBookingUpdate(booking))}/>} />
+        <Route path="/clients" element={<ClientListContainer customers={customers} />} />
       </Routes>
     </Router>
   )

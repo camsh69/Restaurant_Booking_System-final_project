@@ -17,8 +17,8 @@ public class Booking {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-//    @JsonIgnoreProperties(value="bookings")
-    @JsonBackReference
+    @JsonIgnoreProperties(value="bookings")
+//    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
