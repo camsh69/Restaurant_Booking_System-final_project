@@ -1,8 +1,9 @@
 import React from 'react';
+import BookingForm from '../components/BookingFormComponent/BookingForm';
 
 const BookingFormContainer = () => {
   return (
-    <div>BookingFormContainer</div>
+    <div><BookingForm/></div>
   )
 }
 

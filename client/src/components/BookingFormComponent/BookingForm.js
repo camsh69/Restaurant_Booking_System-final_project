@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const BookingForm = ({newBooking}) => {
+const BookingForm = ({customers}) => {
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
@@ -9,22 +9,22 @@ const BookingForm = ({newBooking}) => {
   const handleNameChange = (ev) => setName(ev.target.value);
   const handlePhoneNumberChange = (ev) => setPhoneNumber(ev.target.value);
   const handleEmailChange = (ev) => setEmail(ev.target.value);
+
+
   
 
   const handleSubmit = ev => {
     ev.preventDefault();
-    newBooking({
+    customers({
       name: name,
-      phoneNumber: phoneNumber,
+      phoneNumber : phoneNumber,
       email: email
-      
-    });
+          });
     setName("");
     setPhoneNumber("");
     setEmail("");
     
   }
-
   return (
     <form onSubmit={handleSubmit}>
       <h1>Add a booking</h1>
@@ -66,7 +66,10 @@ const BookingForm = ({newBooking}) => {
       
       <input type="submit" name="submit" value="Save" />
     </form>
-  )
-};
+
+  );
+
+  }
+
 
 export default BookingForm;
