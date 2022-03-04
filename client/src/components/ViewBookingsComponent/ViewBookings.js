@@ -32,7 +32,7 @@ const ViewBookings = ({events, resourceMap, minTime, maxTime}) => {
             Email: ${event.email},   
             Party size: ${event.diners},   
             Special message: ${event.message}   LoyaltyCard: ${event.loyaltyCard}`,
-            footer: '<strong><a href="/edit">Update this Booking</a></strong>',
+            footer: '<strong><a href="/edit">Edit or Delete this Booking</a></strong>',
             confirmButtonColor: '#2A67BC',
             iconColor: '#A3C4D9'})}
             min={minTime}
