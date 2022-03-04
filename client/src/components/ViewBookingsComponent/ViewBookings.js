@@ -2,8 +2,8 @@ import React from 'react';
 import { Calendar, momentLocalizer, Views } from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
 const localizer = momentLocalizer(moment);
 
@@ -34,6 +34,7 @@ const ViewBookings = ({events, resourceMap, minTime, maxTime}) => {
             Special message: ${event.message}   LoyaltyCard: ${event.loyaltyCard}`,
             footer: '<strong><a href="/edit">Edit or Delete this Booking</a></strong>',
             confirmButtonColor: '#2A67BC',
+            confirmButtonText: "Close",
             iconColor: '#A3C4D9'})}
             min={minTime}
             max={maxTime}
