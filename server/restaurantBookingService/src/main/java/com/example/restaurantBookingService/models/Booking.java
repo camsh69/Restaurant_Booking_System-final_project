@@ -17,17 +17,17 @@ public class Booking {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-//    @JsonIgnoreProperties(value="bookings")
-    @JsonBackReference
+    @JsonIgnoreProperties(value="bookings")
+//    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
 
     @Column(name="start_time")
-    private LocalDateTime startTime;
+    private String startTime;
 
     @Column(name="end_time")
-    private LocalDateTime endTime;
+    private String endTime;
 
     @Column(name="diners")
     private int diners;
@@ -53,7 +53,7 @@ public class Booking {
     public Booking() {
     }
 
-    public Booking(Customer customer, LocalDateTime startTime, LocalDateTime endTime, int diners, ArrayList<RestaurantTable> restaurantTables, String message) {
+    public Booking(Customer customer, String startTime, String endTime, int diners, ArrayList<RestaurantTable> restaurantTables, String message) {
         this.customer = customer;
         this.startTime = startTime;
         this.endTime = endTime;
@@ -79,19 +79,19 @@ public class Booking {
         this.customer = customer;
     }
 
-    public LocalDateTime getStartTime() {
+    public String getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(LocalDateTime startTime) {
+    public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
 
-    public LocalDateTime getEndTime() {
+    public String getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(LocalDateTime endTime) {
+    public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
 
