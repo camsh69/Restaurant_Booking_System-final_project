@@ -1,9 +1,11 @@
-import React from 'react';
-import BookingForm from '../components/BookingFormComponent/BookingForm';
+import React, {useState} from 'react';
+import FetchTable from '../components/FetchTableFormComponent/FetchTable';
 
-const BookingFormContainer = ({newBooking}) => {
+const BookingFormContainer = ({newBooking, restaurantTables}) => {
+   
   return (
-    <div>BookingFormContainer</div>
+    <div><FetchTable  restaurantTables={restaurantTables} />
+    </div>
   )
 }
 
