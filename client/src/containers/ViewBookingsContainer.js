@@ -5,13 +5,85 @@ const ViewBookingContainer = ({bookings, tables}) => {
 
   const events = []
   bookings.forEach(booking => {
-    if (booking.tables.length === 1){
+    if (booking.tables.length === 1) {
       events.push({
         start: new Date(booking.startTime),
         end: new Date(booking.endTime),
         title: `Booking Ref: ${booking.id},
         ${booking.customer.name}`,
         resourceId: booking.tables[0].id,
+        ref: booking.id,
+        contact: booking.customer.name,
+        message: booking.message, 
+        diners: booking.diners,
+        loyaltyCard: booking.customer.loyaltyCard,
+        email: booking.customer.email,
+        phone: booking.customer.phoneNumber
+      })
+    } else if (booking.tables.length === 2){
+      events.push({
+        start: new Date(booking.startTime),
+        end: new Date(booking.endTime),
+        title: `Booking Ref: ${booking.id},
+        ${booking.customer.name}`,
+        resourceId: booking.tables[0].id,
+        ref: booking.id,
+        contact: booking.customer.name,
+        message: booking.message, 
+        diners: booking.diners,
+        loyaltyCard: booking.customer.loyaltyCard,
+        email: booking.customer.email,
+        phone: booking.customer.phoneNumber
+      },
+      {
+        start: new Date(booking.startTime),
+        end: new Date(booking.endTime),
+        title: `Booking Ref: ${booking.id},
+        ${booking.customer.name}`,
+        resourceId: booking.tables[1].id,
+        ref: booking.id,
+        contact: booking.customer.name,
+        message: booking.message, 
+        diners: booking.diners,
+        loyaltyCard: booking.customer.loyaltyCard,
+        email: booking.customer.email,
+        phone: booking.customer.phoneNumber
+      })
+    } else if (booking.tables.length === 2) {
+      events.push({
+        start: new Date(booking.startTime),
+        end: new Date(booking.endTime),
+        title: `Booking Ref: ${booking.id},
+        ${booking.customer.name}`,
+        resourceId: booking.tables[0].id,
+        ref: booking.id,
+        contact: booking.customer.name,
+        message: booking.message, 
+        diners: booking.diners,
+        loyaltyCard: booking.customer.loyaltyCard,
+        email: booking.customer.email,
+        phone: booking.customer.phoneNumber
+      },
+      {
+        start: new Date(booking.startTime),
+        end: new Date(booking.endTime),
+        title: `Booking Ref: ${booking.id},
+        ${booking.customer.name}`,
+        resourceId: booking.tables[1].id,
+        ref: booking.id,
+        contact: booking.customer.name,
+        message: booking.message, 
+        diners: booking.diners,
+        loyaltyCard: booking.customer.loyaltyCard,
+        email: booking.customer.email,
+        phone: booking.customer.phoneNumber
+      },
+      {
+        start: new Date(booking.startTime),
+        end: new Date(booking.endTime),
+        title: `Booking Ref: ${booking.id},
+        ${booking.customer.name}`,
+        resourceId: booking.tables[2].id,
         ref: booking.id,
         contact: booking.customer.name,
         message: booking.message, 
@@ -48,8 +120,36 @@ const ViewBookingContainer = ({bookings, tables}) => {
         loyaltyCard: booking.customer.loyaltyCard,
         email: booking.customer.email,
         phone: booking.customer.phoneNumber
+      },
+      {
+        start: new Date(booking.startTime),
+        end: new Date(booking.endTime),
+        title: `Booking Ref: ${booking.id},
+        ${booking.customer.name}`,
+        resourceId: booking.tables[2].id,
+        ref: booking.id,
+        contact: booking.customer.name,
+        message: booking.message, 
+        diners: booking.diners,
+        loyaltyCard: booking.customer.loyaltyCard,
+        email: booking.customer.email,
+        phone: booking.customer.phoneNumber
+      },
+      {
+        start: new Date(booking.startTime),
+        end: new Date(booking.endTime),
+        title: `Booking Ref: ${booking.id},
+        ${booking.customer.name}`,
+        resourceId: booking.tables[3].id,
+        ref: booking.id,
+        contact: booking.customer.name,
+        message: booking.message, 
+        diners: booking.diners,
+        loyaltyCard: booking.customer.loyaltyCard,
+        email: booking.customer.email,
+        phone: booking.customer.phoneNumber
       })
-    }
+    } 
   })
 
   const resourceMap = tables.map(table => {
