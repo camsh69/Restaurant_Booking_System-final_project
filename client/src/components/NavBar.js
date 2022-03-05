@@ -1,28 +1,31 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import Logo from "../assets/restaurantLogo.png"
+import "../Styles/Navbar.css";
 
 
 const NavBar = () => {
+
+   
+    
   return (
     
-    <ul>
-        <li>
-            <Link to="/">Home</Link>
-        </li>
-        <li>
-            <Link to="/view">View Bookings</Link>
-        </li>
-        <li>
-            <Link to="/add">Add Booking</Link>
-        </li>
-        <li>
-            <Link to="/edit">Edit Booking</Link>
-        </li>
-        <li>
-            <Link to="/clients">Clients</Link>
-        </li>
-    </ul>
+    <div className='navbar'>
+            <img src={Logo} />
+            <div className= "hiddenLinks">        
+                <Link to="/">Home</Link>
+                <Link to="/view">View Bookings</Link>
+                <Link to="/add">Add Booking</Link>
+                <Link to="/edit">Edit Booking</Link>
+                <Link to="/clients">Clients</Link>
+            </div>
+     </div>
+    
+    
+
+
+
   )
 }
 
-export default NavBar
+export default NavBar;

@@ -5,8 +5,10 @@ import ClientListContainer from './ClientListContainer';
 import EditBookingContainer from './EditBookingContainer';
 import SplashScreenContainer from './SplashScreenContainer';
 import ViewBookingContainer from './ViewBookingsContainer';
-import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import NavBar from '../components/NavBar';
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+
+
 
 
 
