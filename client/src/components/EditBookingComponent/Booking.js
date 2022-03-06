@@ -1,8 +1,15 @@
 import React from 'react'
 
-const Booking = ({booking, passedDownFunc}) => {
+const Booking = ({booking, passedDownSetBooking, passedDownSetCustomer}) => {
+
+  const handleClick = (booking) => {
+    passedDownSetBooking(booking)
+    passedDownSetCustomer(booking.customer.name)
+
+
+  }
   return (
-    <div >Booking ID: &nbsp; {booking.id} <button onClick={() => passedDownFunc(booking)} >Fill Form</button> </div>
+    <div >Booking Reference: &nbsp; {booking.id} <button onClick={() => handleClick(booking) } >Fill Form</button> </div>
   )
 }
 

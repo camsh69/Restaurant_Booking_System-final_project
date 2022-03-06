@@ -3,28 +3,42 @@ import Booking from './Booking'
 
 const EditBooking = ({bookings, bookingUpdate}) => {
 
+
   const [selectedBooking, setSelectedBooking] = useState({})
+  const [selectedCustomer, setSelectedCustomer] = useState("")
+
+  const toTimestamp = (strDate) => {  
+  const dt = Date.parse(strDate);  
+  return dt;  
+}
+
 
   const bookingNode = bookings.map(booking => 
     {
-      return <Booking passedDownFunc={(value) => setSelectedBooking(value)} booking={booking} key={booking.id}/>
+      if(toTimestamp(booking.startTime) > Date.now()){
+      
+      return <Booking passedDownSetBooking={(value) => setSelectedBooking(value)}
+      passedDownSetCustomer={(value) => setSelectedCustomer(value)}
+        booking={booking} key={booking.id}/>}
     })
+
+    const handleChange = (e) => {
+
+      const value = e.target.value;
+      setSelectedBooking({
+      ...selectedBooking,
+      [e.target.name]: value
+      });
+
+    }
 
     const onSubmit = (e) =>{
 
       e.preventDefault();
       
-      selectedBooking.startTime = e.target.elements.startTime.value
-      selectedBooking.endTime = e.target.elements.endTime.value
-      selectedBooking.diners = e.target.elements.diners.value
-      selectedBooking.message = e.target.elements.message.value
-      
       bookingUpdate(selectedBooking)
 
-      e.target.elements.startTime.value = null
-      e.target.elements.endTime.value = null
-      e.target.elements.diners.value = null
-      e.target.elements.message.value = null
+      setSelectedCustomer("")
       setSelectedBooking({})
     }
 
@@ -35,26 +49,31 @@ const EditBooking = ({bookings, bookingUpdate}) => {
 
   return (<>
     <div>{bookingNode}</div>
+
     <form onSubmit={onSubmit} id="update-booking">
             <div>
-                <label htmlFor="id">ID: </label>
-                <input disabled name="id" type="number" defaultValue={selectedBooking ? selectedBooking.id : null} id="id"/>
+                <label htmlFor="id">Booking Reference: </label>
+                <input disabled name="id" type="number" value={selectedBooking.id ?? ""} id="id"/>
+            </div>
+            <div>
+                <label htmlFor="customerName">Customer name: </label>
+                <input disabled name="customerName" type="text" value={selectedCustomer ?? ""} id="customerName"/>
             </div>
             <div>
                 <label htmlFor="startTime">Start Time: </label>
-                <input name="startTime" type="datetime-local" defaultValue={selectedBooking ? selectedBooking.startTime : null} id="startTime"/>
+                <input onChange={handleChange} name="startTime" type="datetime-local" value={selectedBooking.startTime ?? ""} id="startTime"/>
             </div>
             <div>
                 <label htmlFor="endTime">End Time: </label>
-                <input name="endTime" type="datetime-local" defaultValue={selectedBooking ? selectedBooking.endTime : null} id="endTime"/>
+                <input onChange={handleChange} name="endTime" type="datetime-local" value={selectedBooking.endTime ?? ""} id="endTime"/>
             </div>
             <div>
                 <label htmlFor="diners">Diners: </label>
-                <input name="diners" type="number" defaultValue={selectedBooking ? selectedBooking.diners : null} id="diners"/>
+                <input onChange={handleChange} name="diners" type="number" value={selectedBooking.diners ?? ""} id="diners"/>
             </div>
             <div>
                 <label htmlFor="message">Message: </label>
-                <input name="message" type="text" defaultValue={selectedBooking ? selectedBooking.message : null} id="message"/>
+                <input onChange={handleChange} name="message" type="text" value={selectedBooking.message ?? ""} id="message"/>
             </div>
             
             <input type="submit" value="Update" id="save"/>
