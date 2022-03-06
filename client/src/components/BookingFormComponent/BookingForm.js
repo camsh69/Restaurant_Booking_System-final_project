@@ -1,8 +1,13 @@
 import React from 'react'
+import Email from './Email'
 
 const BookingForm = () => {
   return (
-    <div>BookingForm</div>
+    <>
+      <div>BookingForm</div>
+      <Email/>
+ 
+    </>
   )
 }
 

@@ -3,7 +3,11 @@ import BookingForm from '../components/BookingFormComponent/BookingForm';
 
 const BookingFormContainer = ({newBooking}) => {
   return (
-    <div>BookingFormContainer</div>
+    <>
+       <div>BookingFormContainer</div>
+      <BookingForm/>
+
+    </>
   )
 }
 
