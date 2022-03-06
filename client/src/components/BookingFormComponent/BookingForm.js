@@ -2,67 +2,39 @@ import { useState } from 'react';
 
 
 
-  const BookingForm = ({newCustomer}) => {
-  const [name, setName] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [email, setEmail] = useState("");
+const BookingForm = ({newBooking}) => {
+ 
+  const [message, setMessage] = useState("");
  
 
-  const handleNameChange = (ev) => setName(ev.target.value);
-  const handlePhoneNumberChange = (ev) => setPhoneNumber(ev.target.value);
-  const handleEmailChange = (ev) => setEmail(ev.target.value);
+  
+  const handleMessageChange = (ev) => setMessage(ev.target.value);
 
 
   
 
   const handleSubmit = ev => {
     ev.preventDefault();
-   newCustomer({
-      name: name,
-      phoneNumber : phoneNumber,
-      email: email
+   newBooking({
+      message: message
           });
-    setName("");
-    setPhoneNumber("");
-    setEmail("");
+    
+    setMessage("");
     
   }
   return (
     <form onSubmit={handleSubmit}>
-      <h1>Add a booking</h1>
-      <div className="group">
-        <label htmlFor="name">Guest Name:</label>
-        <input 
-          type="text" 
-          id="name" 
-          name="name" 
-          value={name} 
-          required 
-          onChange={handleNameChange}
-        />
-      </div>
-     
-      <div className="group">
-        <label htmlFor="phoneNumber">Guest Phone number:</label>
-        <input 
-          type="phoneNumber" 
-          id="phoneNumber" 
-          name="phoneNumber" 
-          value={phoneNumber} 
-          required 
-          onChange={handlePhoneNumberChange}
-        />
-      </div>
+      <h1>Add extra details</h1>
 
       <div className="group">
-        <label htmlFor="email">Guest Email:</label>
+        <label htmlFor="message">Add message here:</label>
         <input 
-          type="email" 
-          id="email" 
-          name="email" 
-          value={email} 
+          type="message" 
+          id="message" 
+          name="message" 
+          value={message} 
           required 
-          onChange={handleEmailChange}
+          onChange={handleMessageChange}
         />
       </div>
       
