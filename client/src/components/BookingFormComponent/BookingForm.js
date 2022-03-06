@@ -1,6 +1,8 @@
 import { useState } from 'react';
 
-const BookingForm = ({customers}) => {
+
+
+  const BookingForm = ({newCustomer}) => {
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
@@ -15,7 +17,7 @@ const BookingForm = ({customers}) => {
 
   const handleSubmit = ev => {
     ev.preventDefault();
-    customers({
+   newCustomer({
       name: name,
       phoneNumber : phoneNumber,
       email: email
