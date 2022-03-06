@@ -44,7 +44,7 @@ const Email = () => {
           <input type="email" name="to_email" required />
           </div>
           <div className="field">
-          <label>Message</label>
+          <label>Message:</label>
           <textarea name="message" required/>
           </div>
           <input type="submit" value="Send Email Confirmation" />
@@ -52,7 +52,7 @@ const Email = () => {
 
         <br/>
         <div>
-          <button type='button' onClick={handleClick}>Clear Contents</button>
+          <button type='button' onClick={handleClick}>Clear Form</button>
         </div>
         </>
       );
