@@ -30,6 +30,9 @@ const Email = () => {
     
       return (
         <>
+        <div>
+          Email component
+        </div>
         <form id="emailForm" onSubmit={sendEmail}>
           <div className="field">
           <label>Booking Ref:</label>
