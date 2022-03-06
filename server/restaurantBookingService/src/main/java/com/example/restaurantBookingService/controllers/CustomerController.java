@@ -17,6 +17,7 @@ public class CustomerController {
     @Autowired
     CustomerRepository customerRepository;
 
+    @CrossOrigin
     @GetMapping(value = "/customers")
     public ResponseEntity<List<Customer>>getAllCustomers(
             @RequestParam(name="loyaltyCard", required = false) String loyaltyCard){
@@ -26,6 +27,7 @@ public class CustomerController {
         return new ResponseEntity<>(customerRepository.findCustomers(), HttpStatus.OK);
     }
 
+    @CrossOrigin
     @GetMapping(value = "/customers/{id}")
     public ResponseEntity getCustomer(@PathVariable Long id){
         return new ResponseEntity<>(customerRepository.findById(id), HttpStatus.OK);

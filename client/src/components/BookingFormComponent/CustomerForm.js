@@ -6,14 +6,32 @@ import { useState } from 'react';
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
- 
+  const [customerId, setCustomerId] = useState("");
 
   const handleNameChange = (ev) => setName(ev.target.value);
   const handlePhoneNumberChange = (ev) => setPhoneNumber(ev.target.value);
   const handleEmailChange = (ev) => setEmail(ev.target.value);
 
 
-  
+
+
+  const getCustomerFromLoyalty = function(loyalty_card){
+      var loyalty_card = "036758";
+      fetch("http://localhost:8080/api/customers?loyaltyCard=036758&", {
+        "method": "GET",
+ 
+      })
+      .then(response => {
+        console.log(response);
+      })
+      .catch(err => {
+        console.error(err);
+      });
+}
+
+  const handleLoyalty = ev => {
+    getCustomerFromLoyalty("")
+  }
 
   const handleSubmit = ev => {
     ev.preventDefault();
@@ -28,6 +46,15 @@ import { useState } from 'react';
     
   }
   return (
+      <div>
+        {/* text box of laoyal with onChange event to hamdleLoyalty */}
+        <input 
+          type="text" 
+          id="loyalty_card" 
+          name="loyalty_card" 
+          value=""
+          onChange={handleLoyalty}
+        />
     <form onSubmit={handleSubmit}>
       <h1>Add a Customer</h1>
       <div className="group">
@@ -68,6 +95,7 @@ import { useState } from 'react';
       
       <input type="submit" name="submit" value="Save" />
     </form>
+    </div>
 
   );
 

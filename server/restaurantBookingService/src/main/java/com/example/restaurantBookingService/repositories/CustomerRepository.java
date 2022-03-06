@@ -13,6 +13,7 @@ import java.util.List;
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
     List<Customer> findByLoyaltyCard(String loyaltyCard);
+
     @Query("SELECT c From Customer c ORDER BY c.bookings.size DESC")
     List<Customer> findCustomers();
 

@@ -38,7 +38,7 @@ const MainContainer = () => {
   
   const handleCustomerPost = function(customer){
     const request = new Request();
-    request.post("/api/customers", customer)
+    return request.post("/api/customers", customer)
   }
 
   const findBookingById = function(id){
