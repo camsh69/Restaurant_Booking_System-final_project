@@ -16,10 +16,39 @@
 }
 
 input[type="submit"] {
+  cursor: pointer;
   display: block;
   padding: 6px 30px;
   font-size: 14px;
   background-color: #3279a6;
   color: #fff;
   border: none;
+  border-radius: 28px;
+}
+
+input[type="submit"]:hover {
+  background-color: #2a67bc;
+}
+input[type="submit"]:active {
+  position: relative;
+  top: 1px;
+}
+
+button {
+  cursor: pointer;
+  display: block;
+  padding: 6px 30px;
+  font-size: 14px;
+  background-color: #3279a6;
+  color: #fff;
+  border: none;
+  border-radius: 28px;
+}
+
+button:hover {
+  background-color: #2a67bc;
+}
+button:active {
+  position: relative;
+  top: 1px;
 }
