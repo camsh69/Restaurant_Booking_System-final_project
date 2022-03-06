@@ -1,26 +1,25 @@
 import  React, {useState} from 'react';
-import TextField from '@mui/material/TextField';
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import DateTimePicker from '@mui/lab/DateTimePicker';
 import AddToTableList from './AddToTableList';
+import moment from 'moment';
 
-const FetchTable = ({restaurantTables, restaurantTableAdded}) => {
-    const [startTime, setStartTime] = useState(new Date());
-    const [endTime, setEndTime] = useState(new Date());
+const FetchTable = ({restaurantTables}) => {
+    
+    const [startTime, setStartTime] = useState(moment().format());
+    const [endTime, setEndTime] =useState(moment().format());
     const [noOfCustomers, setNoOfCustomer] = useState("")
     const [tables, setTables] = useState([])
 
-
     const handleNoOfCustomersChange = (ev) => setNoOfCustomer(ev.target.value);
-   
+    const handleStartTimeChange = (ev) => setStartTime(ev.target.value);
+    const handleEndTimeChange = (ev) => setEndTime(ev.target.value);
+    
 
     const tableList = restaurantTables.map((restaurantTable, index) => {
         return (
             <li>
             <span key={index} value={index}> table_no:  {restaurantTable.id}  covers: 
              {restaurantTable.covers} </span>
-             <AddToTableList restaurantTable={restaurantTable} restaurantTableAdded={restaurantTableAdded}/>
+             <AddToTableList restaurantTable={restaurantTable} restaurantTableAdded={restaurantTabl => onClick(restaurantTabl)}/>
             </li>
           );
     })
@@ -35,37 +34,38 @@ const FetchTable = ({restaurantTables, restaurantTableAdded}) => {
     return (
         <>
 
+        <div className='stsrt-time'>
+            <label htmlFor='datetime'>Start Time: </label>
+            <input
+                name="datetime"
+                type="datetime-local"
+                value={startTime}
+                onChange={handleStartTimeChange}
+                required
+            />
+        </div>
 
-    <LocalizationProvider dateAdapter={AdapterDateFns}>
-    <DateTimePicker
-        renderInput={(props) => <TextField {...props} />}
-        label="Start_Time"
-        value={startTime}
-        onChange={(newValue) => {
-        setStartTime(newValue);
-        }}
-    /><br/>
-    </LocalizationProvider>
-
-    <LocalizationProvider dateAdapter={AdapterDateFns}>
-    <DateTimePicker
-        renderInput={(props) => <TextField {...props} />}
-        label="End_Time"
-        value={endTime}
-        onChange={(newValue) => {
-        setEndTime(newValue);
-        }}
-    />
-    </LocalizationProvider><br/>
-
-    <input
-        name="NoOfGuest"
-        type="number"
-        value={noOfCustomers}
-        onChange={handleNoOfCustomersChange}
-        required
-        min="1"
-    />
+        <div className='end-time'>
+            <label htmlFor='datetime'>End Time: </label>
+            <input
+                name="datetime"
+                type="datetime-local"
+                value={endTime}
+                onChange={handleEndTimeChange}
+                required
+            />
+        </div>
+        <div className='no-of-guest'>
+        <label htmlFor='noOfGyest'>No Of Guests</label>
+        <input
+            name="NoOfGuest"
+            type="number"
+            value={noOfCustomers}
+            onChange={handleNoOfCustomersChange}
+            required
+            min="1"
+        />
+        </div>
 
         <div className='table-list'>
             {tableList}
@@ -73,17 +73,10 @@ const FetchTable = ({restaurantTables, restaurantTableAdded}) => {
 
         <div className='table'>
        {table => onClick(table)}
-        </div>
-    
+        </div>   
     </>
-
       
     );
-
 }
-
-
-
-
 
 export default FetchTable
