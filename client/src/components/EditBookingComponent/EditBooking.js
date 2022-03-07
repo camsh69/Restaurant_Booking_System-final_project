@@ -20,6 +20,8 @@ const EditBooking = ({bookings, bookingUpdate}) => {
       return <Booking passedDownSetBooking={(value) => setSelectedBooking(value)}
       passedDownSetCustomer={(value) => setSelectedCustomer(value)}
         booking={booking} key={booking.id}/>}
+      else 
+      return null
     })
 
     const handleChange = (e) => {
