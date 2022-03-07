@@ -1,30 +1,19 @@
 import { useState } from 'react';
-import Email from './Email'
 
-
-
-const BookingForm = ({ newBooking, email, phoneNumber, name, customerId, customers}) => {
+const BookingForm = ({ newBooking, email, phoneNumber, name, customers}) => {
 
   const [message, setMessage] = useState("");
 
-
-
   const handleMessageChange = (ev) => setMessage(ev.target.value);
-
-
-
-  
 
   const handleSubmit = ev => {
     ev.preventDefault();
-    const custId = customers.lastIndexOf()
-    const neededIndex = customers.length-1
 
-
+    const neededIndex = customers.length-1;
    
     newBooking({
         message: message,
-      customer: {
+        customer: {
         id: customers[neededIndex].id,
         name: name,
         phoneNumber: phoneNumber,
@@ -55,12 +44,8 @@ const BookingForm = ({ newBooking, email, phoneNumber, name, customerId, custome
 
       <input type="submit" name="submit" value="Save" />
     </form>
-
-    <Email />
     </>
-
   );
-
 }
 
 
