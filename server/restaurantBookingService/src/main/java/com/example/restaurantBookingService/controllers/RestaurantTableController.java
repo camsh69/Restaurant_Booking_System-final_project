@@ -28,7 +28,7 @@ public class RestaurantTableController {
     @PostMapping(value = "/tables")
     public ResponseEntity<RestaurantTable> postTable(@RequestBody RestaurantTable restaurantTable){
         restaurantTableRepository.save(restaurantTable);
-        return new ResponseEntity<>(restaurantTable, HttpStatus.OK);
+        return new ResponseEntity<>(restaurantTable, HttpStatus.CREATED);
     }
 
     @DeleteMapping(value = "/tables/{id}")

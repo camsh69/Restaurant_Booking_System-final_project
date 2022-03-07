@@ -5,8 +5,10 @@ import ClientListContainer from './ClientListContainer';
 import EditBookingContainer from './EditBookingContainer';
 import SplashScreenContainer from './SplashScreenContainer';
 import ViewBookingContainer from './ViewBookingsContainer';
-import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import NavBar from '../components/NavBar';
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+
+
 
 
 
@@ -70,10 +72,12 @@ const MainContainer = () => {
 
 
 
-  
+
     useEffect(()=>{
       requestAll()
     }, [])
+
+    
 
 
   return (
@@ -82,7 +86,7 @@ const MainContainer = () => {
       <Routes>
         <Route index element={<SplashScreenContainer />} />
         <Route path="/view" element={<ViewBookingContainer bookings={bookings} tables={restaurantTables}/>} />
-        <Route path="/add" element={<BookingFormContainer newBooking={booking => handleBookingPost(booking)} newClient={client => handleCustomerPost(client)}/>} />
+        <Route path="/add" element={<BookingFormContainer restaurantTables={restaurantTables} newBooking={booking => handleBookingPost(booking)} newCustomer={customer => handleCustomerPost(customer)} customers = {customers}/>} />
         <Route path="/edit" element={<EditBookingContainer bookings={bookings} bookingUpdate={(booking) => (handleBookingUpdate(booking))}/>} />
         <Route path="/clients" element={<ClientListContainer customers={customers} />} />
       </Routes>
