@@ -72,10 +72,12 @@ const MainContainer = () => {
 
 
 
-  
+
     useEffect(()=>{
       requestAll()
     }, [])
+
+    
 
 
   return (
