@@ -3,7 +3,8 @@ import BookingForm from './BookingForm';
 
 
 
-const CustomerForm = ({ newCustomer, newBooking, customers }) => {
+const CustomerForm = ({ newCustomer, customers }) => {
+
     const [name, setName] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
     const [email, setEmail] = useState("");
@@ -19,21 +20,21 @@ const CustomerForm = ({ newCustomer, newBooking, customers }) => {
     function checkLoyaltyCard(loyaltyCard) {
         for (let customer of customers) {
             if (customer.loyaltyCard === loyaltyCard) {
-                setName(customer.name)
-                setPhoneNumber(customer.phoneNumber)
-                setEmail(customer.email)
-                setCustomerId(customer.id)
+                setName(customer.name);
+                setPhoneNumber(customer.phoneNumber);
+                setEmail(customer.email);
+                setCustomerId(customer.id);
             }
         }
-        }
-
-
+    }
 
         const handleSubmit = ev => {
+
             ev.preventDefault();
+
             const body = { "email": email, "name": name, "phoneNumber": phoneNumber }
-            newCustomer(body) 
-            
+
+            newCustomer(body);
         }
 
         return (
@@ -94,13 +95,8 @@ const CustomerForm = ({ newCustomer, newBooking, customers }) => {
                         <input type="submit" name="submit" value="Save" />
                     </form>
                 </div>
-                <div>
-                    <BookingForm newBooking={newBooking} email={email} phoneNumber={phoneNumber} name={name} customerId={customerId} customers = {customers} />
-                </div>
             </div>
-
         );
-
     }
 
 

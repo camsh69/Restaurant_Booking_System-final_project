@@ -6,16 +6,19 @@ import Email from '../components/BookingFormComponent/Email';
 
 
 const BookingFormContainer = ({newCustomer, newBooking, customers, restaurantTables}) => {
+
+
+
+  
   return (
     <div>
       <FetchTable  restaurantTables={restaurantTables} />
     
       <CustomerForm newCustomer = {newCustomer} newBooking= {newBooking} customers ={customers}/>
 
-      <BookingForm/>
+      <BookingForm newBooking={newBooking} email={email} phoneNumber={phoneNumber} name={name} customerId={customerId} customers = {customers} />
 
       <Email/>
-
     </div>
   )
 }

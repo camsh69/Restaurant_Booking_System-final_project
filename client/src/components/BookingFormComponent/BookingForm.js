@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const BookingForm = ({ newBooking, email, phoneNumber, name, customers}) => {
+const BookingForm = ({ newBooking, email, phoneNumber, name, customers }) => {
 
   const [message, setMessage] = useState("");
 
@@ -9,12 +9,12 @@ const BookingForm = ({ newBooking, email, phoneNumber, name, customers}) => {
   const handleSubmit = ev => {
     ev.preventDefault();
 
-    const neededIndex = customers.length-1;
+    const index = customers.length-1;
    
     newBooking({
         message: message,
         customer: {
-        id: customers[neededIndex].id,
+        id: customers[index].id,
         name: name,
         phoneNumber: phoneNumber,
         email: email
@@ -23,8 +23,8 @@ const BookingForm = ({ newBooking, email, phoneNumber, name, customers}) => {
     });
     
     setMessage("");
-
   }
+  
   return (
     <>
     <form onSubmit={handleSubmit}>
