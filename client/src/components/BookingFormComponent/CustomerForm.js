@@ -3,7 +3,7 @@ import BookingForm from './BookingForm';
 
 
 
-const CustomerForm = ({ newCustomer, customers }) => {
+const CustomerForm = ({ newCustomer, customers, sendName, sendPhoneNumber, sendEmail, sendCustomerID }) => {
 
     const [name, setName] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
@@ -15,7 +15,6 @@ const CustomerForm = ({ newCustomer, customers }) => {
     const handlePhoneNumberChange = (ev) => setPhoneNumber(ev.target.value);
     const handleEmailChange = (ev) => setEmail(ev.target.value);
     const handleLoyaltyCard = (ev) => setLoyaltyCard(ev.target.value);
-
 
     function checkLoyaltyCard(loyaltyCard) {
         for (let customer of customers) {
@@ -32,9 +31,16 @@ const CustomerForm = ({ newCustomer, customers }) => {
 
             ev.preventDefault();
 
-            const body = { "email": email, "name": name, "phoneNumber": phoneNumber }
+            if (!customerId === "") {
+                const body = { "email": email, "name": name, "phoneNumber": phoneNumber }
+                newCustomer(body);
+            } else {
+                sendCustomerID(customerId);
+            }
 
-            newCustomer(body);
+            sendName(name);
+            sendEmail(email);
+            sendPhoneNumber(phoneNumber);            
         }
 
         return (
@@ -92,7 +98,7 @@ const CustomerForm = ({ newCustomer, customers }) => {
                             />
                         </div>
 
-                        <input type="submit" name="submit" value="Save" />
+                        <input type="submit" name="submit" value="Save Customer Details" />
                     </form>
                 </div>
             </div>

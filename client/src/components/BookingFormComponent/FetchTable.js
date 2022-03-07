@@ -2,7 +2,7 @@ import  React, {useState} from 'react';
 import AddToTableList from './AddToTableList';
 import moment from 'moment';
 
-const FetchTable = ({restaurantTables}) => {
+const FetchTable = ({restaurantTables, sendStartTime, sendEndTime, sendNoOfCustomers, sendTables}) => {
     
     const [startTime, setStartTime] = useState(moment().format());
     const [endTime, setEndTime] =useState(moment().format());
@@ -14,12 +14,11 @@ const FetchTable = ({restaurantTables}) => {
     const handleEndTimeChange = (ev) => setEndTime(ev.target.value);
     
 
-    const tableList = restaurantTables.map((restaurantTable, index) => {
+    const tableList = restaurantTables.map(restaurantTable => {
         return (
             <li>
-            <span key={index} value={index}> table_no:  {restaurantTable.id}  covers: 
-             {restaurantTable.covers} </span>
-             <AddToTableList restaurantTable={restaurantTable} restaurantTableAdded={restaurantTabl => onClick(restaurantTabl)}/>
+            <span> Table no:  {restaurantTable.id}  covers:  {restaurantTable.covers} </span>
+             <AddToTableList key={restaurantTable.id} restaurantTable={restaurantTable} restaurantTableAdded={restaurantTable => onClick(restaurantTable)}  />
             </li>
           );
     })
@@ -27,14 +26,20 @@ const FetchTable = ({restaurantTables}) => {
     const onClick = table => {
         if(!tables.includes(table)){
           const updatedTableList = [...tables, table];
-          setTables(updatedTableList);
+          setTables(updatedTableList)
+          .then(() => {
+              sendStartTime(startTime);
+              sendEndTime(endTime);
+              sendNoOfCustomers(noOfCustomers);
+              sendTables(tables);
+          })
         }
       }
      
     return (
         <>
 
-        <div className='stsrt-time'>
+        <div className='start-time'>
             <label htmlFor='datetime'>Start Time: </label>
             <input
                 name="datetime"
@@ -68,12 +73,10 @@ const FetchTable = ({restaurantTables}) => {
         </div>
 
         <div className='table-list'>
+        <ul>
             {tableList}
+        </ul>
         </div>
-
-        <div className='table'>
-       {table => onClick(table)}
-        </div>   
     </>
       
     );
