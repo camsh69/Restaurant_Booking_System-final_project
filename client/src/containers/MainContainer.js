@@ -69,15 +69,9 @@ const MainContainer = () => {
     .then(() => requestAll())
   }
 
-
-
-
-
     useEffect(()=>{
       requestAll()
     }, [])
-
-    
 
 
   return (

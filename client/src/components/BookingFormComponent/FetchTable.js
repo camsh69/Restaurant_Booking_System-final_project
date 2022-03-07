@@ -1,15 +1,14 @@
 import  React, {useState} from 'react';
 import AddToTableList from './AddToTableList';
-import moment from 'moment';
 
 const FetchTable = ({restaurantTables, sendStartTime, sendEndTime, sendNoOfCustomers, sendTables}) => {
     
-    const [startTime, setStartTime] = useState(moment().format());
-    const [endTime, setEndTime] =useState(moment().format());
-    const [noOfCustomers, setNoOfCustomer] = useState("")
+    const [startTime, setStartTime] = useState("");
+    const [endTime, setEndTime] = useState("");
+    const [noOfCustomers, setNoOfCustomer] = useState(1);
     const [tables, setTables] = useState([])
 
-    const handleNoOfCustomersChange = (ev) => setNoOfCustomer(ev.target.value);
+    const handleNoOfCustomersChange = (ev) => setNoOfCustomer(parseInt(ev.target.value));
     const handleStartTimeChange = (ev) => setStartTime(ev.target.value);
     const handleEndTimeChange = (ev) => setEndTime(ev.target.value);
     
@@ -27,14 +26,15 @@ const FetchTable = ({restaurantTables, sendStartTime, sendEndTime, sendNoOfCusto
         if(!tables.includes(table)){
           const updatedTableList = [...tables, table];
           setTables(updatedTableList)
-          .then(() => {
-              sendStartTime(startTime);
-              sendEndTime(endTime);
-              sendNoOfCustomers(noOfCustomers);
-              sendTables(tables);
-          })
         }
       }
+
+    const handleConfirm = () => {
+        sendStartTime(startTime);
+        sendEndTime(endTime);
+        sendNoOfCustomers(parseInt(noOfCustomers));
+        sendTables(tables);
+    }
      
     return (
         <>
@@ -61,7 +61,7 @@ const FetchTable = ({restaurantTables, sendStartTime, sendEndTime, sendNoOfCusto
             />
         </div>
         <div className='no-of-guest'>
-        <label htmlFor='noOfGyest'>No Of Guests</label>
+        <label htmlFor='noOfGuest'>No Of Guests</label>
         <input
             name="NoOfGuest"
             type="number"
@@ -76,6 +76,10 @@ const FetchTable = ({restaurantTables, sendStartTime, sendEndTime, sendNoOfCusto
         <ul>
             {tableList}
         </ul>
+        </div>
+
+        <div>
+            <button type="button" onClick={handleConfirm}>Confirm Time and Table(s)</button>
         </div>
     </>
       

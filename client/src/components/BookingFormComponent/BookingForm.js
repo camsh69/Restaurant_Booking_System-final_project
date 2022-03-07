@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const BookingForm = ({ newBooking, email, phoneNumber, name, customers }) => {
+const BookingForm = ({ newBooking, email, phoneNumber, name, customers, startTime, endTime, noOfCustomers, tables, customerId, loyaltyCard }) => {
 
   const [message, setMessage] = useState("");
 
@@ -10,20 +10,43 @@ const BookingForm = ({ newBooking, email, phoneNumber, name, customers }) => {
     ev.preventDefault();
 
     const index = customers.length-1;
-   
-    newBooking({
-        message: message,
+
+    if(customerId === "") {
+      newBooking({
         customer: {
         id: customers[index].id,
         name: name,
         phoneNumber: phoneNumber,
-        email: email
-      }
-      
-    });
-    
-    setMessage("");
+        email: email,
+        loyaltyCard: null
+        },
+        startTime: startTime,
+        endTime: endTime,
+        diners: noOfCustomers,
+        message: message,
+        receipt: null,
+        tables: tables      
+      });    
+    } else {
+      newBooking({
+        customer: {
+        id: customerId,
+        name: name,
+        phoneNumber: phoneNumber,
+        email: email,
+        loyaltyCard: loyaltyCard,
+        },
+        startTime: startTime,
+        endTime: endTime,
+        diners: noOfCustomers,
+        message: message,
+        receipt: null,
+        tables: tables      
+      });
+
+      window.location.reload()
   }
+}
   
   return (
     <>
@@ -37,12 +60,11 @@ const BookingForm = ({ newBooking, email, phoneNumber, name, customers }) => {
           id="message"
           name="message"
           value={message}
-          required
           onChange={handleMessageChange}
         />
       </div>
 
-      <input type="submit" name="submit" value="Save" />
+      <input type="submit" name="submit" value="Create Booking" />
     </form>
     </>
   );

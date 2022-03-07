@@ -27,9 +27,9 @@ public class Customer{
     @Column(name= "loyalty_card")
     private String loyaltyCard;
 
-    @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
-//    @JsonBackReference
-    @JsonIgnoreProperties({"customer"})
+    @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY, cascade=CascadeType.ALL)
+    @JsonBackReference
+//    @JsonIgnoreProperties({"customer"})
     private List<Booking>bookings;
 
 
