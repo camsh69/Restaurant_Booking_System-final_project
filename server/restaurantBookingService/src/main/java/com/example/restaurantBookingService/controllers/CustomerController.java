@@ -17,20 +17,23 @@ public class CustomerController {
     @Autowired
     CustomerRepository customerRepository;
 
+    @CrossOrigin
     @GetMapping(value = "/customers")
     public ResponseEntity<List<Customer>>getAllCustomers(
             @RequestParam(name="loyaltyCard", required = false) String loyaltyCard){
         if (loyaltyCard != null) {
             return new ResponseEntity<>(customerRepository.findByLoyaltyCard(loyaltyCard), HttpStatus.OK);
         }
-        return new ResponseEntity<>(customerRepository.findCustomers(), HttpStatus.OK);
+        return new ResponseEntity<>(customerRepository.findAll(), HttpStatus.OK);
     }
 
+    @CrossOrigin
     @GetMapping(value = "/customers/{id}")
     public ResponseEntity getCustomer(@PathVariable Long id){
         return new ResponseEntity<>(customerRepository.findById(id), HttpStatus.OK);
     }
 
+    @CrossOrigin
     @PostMapping(value = "/customers")
     public ResponseEntity<Customer> postCustomer(@RequestBody Customer customer){
         customerRepository.save(customer);
