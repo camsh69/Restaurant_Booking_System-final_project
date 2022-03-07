@@ -24,7 +24,7 @@ public class CustomerController {
         if (loyaltyCard != null) {
             return new ResponseEntity<>(customerRepository.findByLoyaltyCard(loyaltyCard), HttpStatus.OK);
         }
-        return new ResponseEntity<>(customerRepository.findCustomers(), HttpStatus.OK);
+        return new ResponseEntity<>(customerRepository.findAll(), HttpStatus.OK);
     }
 
     @CrossOrigin

@@ -1,10 +1,10 @@
 import React from 'react';
 import CustomerForm from '../components/BookingFormComponent/CustomerForm';
 
-const BookingFormContainer = ({newCustomer, newBooking}) => {
+const BookingFormContainer = ({newCustomer, newBooking, customers}) => {
   return (
     <div>
-      <CustomerForm newCustomer = {newCustomer} newBooking= {newBooking}/>
+      <CustomerForm newCustomer = {newCustomer} newBooking= {newBooking} customers ={customers}/>
     </div>
   )
 }
