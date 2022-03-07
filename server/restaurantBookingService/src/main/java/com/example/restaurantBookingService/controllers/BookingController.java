@@ -15,16 +15,19 @@ public class BookingController {
     @Autowired
     BookingRepository bookingRepository;
 
+    @CrossOrigin
     @GetMapping(value = "/bookings")
     public ResponseEntity<List<Booking>> getAllBookings() {
         return new ResponseEntity<>(bookingRepository.findAll(), HttpStatus.CREATED);
     }
 
+    @CrossOrigin
     @GetMapping(value = "/bookings/{id}")
     public ResponseEntity getBooking(@PathVariable Long id) {
         return new ResponseEntity<>(bookingRepository.findById(id), HttpStatus.OK);
     }
 
+    @CrossOrigin
     @PostMapping(value = "/bookings")
     public ResponseEntity<Booking> postBooking(@RequestBody Booking booking) {
         bookingRepository.save(booking);

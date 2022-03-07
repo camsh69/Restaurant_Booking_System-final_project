@@ -1,64 +1,76 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Request from '../helpers/request';
 import BookingFormContainer from './BookingFormContainer';
 import ClientListContainer from './ClientListContainer';
 import EditBookingContainer from './EditBookingContainer';
 import SplashScreenContainer from './SplashScreenContainer';
 import ViewBookingContainer from './ViewBookingsContainer';
-import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from '../components/NavBar';
 
 
 
 const MainContainer = () => {
 
-    const [customers, setCustomers] = useState([]);
-    const [bookings, setBookings] = useState([]);
-    const [restaurantTables, setRestaurantTables] = useState([]);
-  
-    const requestAll = function(){
-      const request = new Request();
-      const customerPromise = request.get('/api/customers')
-      const bookingPromise = request.get('/api/bookings')
-      const restaurantTablePromise = request.get('/api/tables')
-  
-      Promise.all([customerPromise, bookingPromise, restaurantTablePromise])
+  const [customers, setCustomers] = useState([]);
+  const [bookings, setBookings] = useState([]);
+  const [restaurantTables, setRestaurantTables] = useState([]);
+
+  const requestAll = function () {
+    const request = new Request();
+    const customerPromise = request.get('/api/customers')
+    const bookingPromise = request.get('/api/bookings')
+    const restaurantTablePromise = request.get('/api/tables')
+
+    Promise.all([customerPromise, bookingPromise, restaurantTablePromise])
       .then((data) => {
         setCustomers(data[0]);
         setBookings(data[1]);
         setRestaurantTables(data[2])
       })
-    }
+  }
 
-    const findCustomerById = function(id){
+  const findCustomerById = function (id) {
     return customers.find((customer) => {
       return customer.id === parseInt(id);
     })
   }
-  
-  const handleCustomerPost = function(customer){
+
+  const handleCustomerPost = function (customer) {
     const request = new Request();
-    return request.post("/api/customers", customer)
+    fetch("http://localhost:8080/api/customers", {
+      "method": "POST",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "{\"customer\":{\"email\":\"sia123@gmail.com\",\"name\":\"Coffee\",\"phoneNumber\":\"07634464512\"}}"
+    })
+    .then(response => {
+      return response.json()
+    })
+    .catch(err => {
+      console.error(err);
+    });
   }
 
-  const findBookingById = function(id){
+  const findBookingById = function (id) {
     return bookings.find((booking) => {
       return booking.id === parseInt(id);
     })
   }
 
-  const handleBookingDelete = function(id){
+  const handleBookingDelete = function (id) {
     const request = new Request();
     const url = "/api/bookings/" + id
     request.delete(url)
   }
 
-  const handleBookingPost = function(booking){
+  const handleBookingPost = function (booking) {
     const request = new Request();
     request.post("/api/bookings", booking)
   }
 
-  const handleBookingUpdate = function(booking){
+  const handleBookingUpdate = function (booking) {
     const request = new Request();
     request.patch('/api/bookings/' + booking.id, booking)
   }
@@ -66,20 +78,20 @@ const MainContainer = () => {
 
 
 
-  
-    useEffect(()=>{
-      requestAll()
-    }, [])
+
+  useEffect(() => {
+    requestAll()
+  }, [])
 
 
   return (
     <Router>
-      <NavBar/>
+      <NavBar />
       <Routes>
         <Route index element={<SplashScreenContainer />} />
         <Route path="/view" element={<ViewBookingContainer bookings={bookings} />} />
-        <Route path="/add" element={<BookingFormContainer newBooking={handleBookingPost} newCustomer = {handleCustomerPost}/>} />
-        <Route path="/edit" element={<EditBookingContainer bookings={bookings} bookingUpdate={(booking) => (handleBookingUpdate(booking))}/>} />
+        <Route path="/add" element={<BookingFormContainer newBooking={handleBookingPost} newCustomer={handleCustomerPost} />} />
+        <Route path="/edit" element={<EditBookingContainer bookings={bookings} bookingUpdate={(booking) => (handleBookingUpdate(booking))} />} />
         <Route path="/clients" element={<ClientListContainer customers={customers} />} />
       </Routes>
     </Router>

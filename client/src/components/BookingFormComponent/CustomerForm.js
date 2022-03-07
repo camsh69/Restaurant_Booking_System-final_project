@@ -41,16 +41,27 @@ const CustomerForm = ({ newCustomer, newBooking }) => {
 
     const handleSubmit = ev => {
         ev.preventDefault();
-        newCustomer({
-            name: name,
-            phoneNumber: phoneNumber,
-            email: email
-        });
-        setName("");
-        setPhoneNumber("");
-        setEmail("");
-        setCustomerId("");
+        // var newCustomerObject = newCustomer({
+        //     name: name,
+        //     phoneNumber: phoneNumber,
+        //     email: email
+        // });
 
+        fetch("http://localhost:8080/api/customers", {
+          "method": "POST",
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "body": "{\"customer\":{\"email\":\"sia123@gmail.com\",\"name\":\"Coffee\",\"phoneNumber\":\"07634464512\"}}"
+        })
+        .then(response => response.json())
+        .then(data => {
+                console.log(data)
+                setCustomerId(data.id)
+        })
+        .catch(err => {
+          console.error(err);
+        });
     }
     return (
         <div>

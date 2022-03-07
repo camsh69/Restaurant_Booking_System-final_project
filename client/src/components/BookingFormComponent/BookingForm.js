@@ -12,6 +12,7 @@ const BookingForm = ({ newBooking, email, phoneNumber, name, customerId }) => {
 
 
 
+  
 
   const handleSubmit = ev => {
     ev.preventDefault();
@@ -22,9 +23,10 @@ const BookingForm = ({ newBooking, email, phoneNumber, name, customerId }) => {
         name: name,
         phoneNumber: phoneNumber,
         email: email
-      },
+      }
+      
     });
-
+    
     setMessage("");
 
   }

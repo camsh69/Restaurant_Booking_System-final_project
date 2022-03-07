@@ -33,6 +33,7 @@ public class CustomerController {
         return new ResponseEntity<>(customerRepository.findById(id), HttpStatus.OK);
     }
 
+    @CrossOrigin
     @PostMapping(value = "/customers")
     public ResponseEntity<Customer> postCustomer(@RequestBody Customer customer){
         customerRepository.save(customer);
