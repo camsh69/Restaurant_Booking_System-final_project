@@ -49,6 +49,7 @@ const FetchTable = ({restaurantTables, sendStartTime, sendEndTime, sendNoOfCusto
                 value={startTime}
                 onChange={handleStartTimeChange}
                 required
+                autofocus
             />
         </div>
 

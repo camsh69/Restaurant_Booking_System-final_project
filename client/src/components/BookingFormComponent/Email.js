@@ -29,6 +29,8 @@ const Email = ({ bookingFormComplete, bookings }) => {
 
       const index = bookings.length -1;
 
+      const start = new Date(bookings[index].startTime);
+
       return (
         !bookingFormComplete ? "" :
         
@@ -52,9 +54,9 @@ const Email = ({ bookingFormComplete, bookings }) => {
           </div>
           <div className="field">
           <label>Message:</label>
-          <textarea name="message" cols="50" rows="10" required/>
+          <textarea name="message" cols="50" rows="10" value={`Booking on ${start.toLocaleString()} confirmed.`} required/>
           </div>
-          <input type="submit" value="Send Email Confirmation" />
+          <input type="submit" value="Send Email Confirmation" autofocus/>
         </form>
 
         <br/>
