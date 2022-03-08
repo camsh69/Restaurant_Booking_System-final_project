@@ -9,7 +9,10 @@ const Booking = ({booking, passedDownSetBooking, passedDownSetCustomer, handleDe
 
   }
   return (
-    <div >Booking Reference: &nbsp; {booking.id} <button onClick={() => handleClick(booking) } >Fill Form</button><button onClick={() => handleDeleteClick(booking.id) } >Delete</button> </div>
+    <div className='input'>
+    Booking Reference: &nbsp; {booking.id} <button onClick={() => handleClick(booking) } >Fill Form</button><button onClick={() => handleDeleteClick(booking.id) } >Delete</button>
+     </div>
+    
   )
 }
 

@@ -58,7 +58,7 @@ const CustomerForm = ({ newCustomer, customers, sendName, sendPhoneNumber, sendE
                     value={loyaltyCard}
                     onChange={handleLoyaltyCard}
                 />
-                <div className='button'>
+                <div className='style-button'>
                 <button onClick={() => checkLoyaltyCard(loyaltyCard)}>Check</button>
                 </div>
             

@@ -56,7 +56,7 @@ const Email = ({ bookingFormComplete }) => {
         </form>
 
         <br/>
-        <div className='button'>
+        <div className='style-button'>
           <button type='button' onClick={handleClick}>Clear Form</button>
         </div>
         </div>

@@ -18,25 +18,11 @@
   box-shadow: 14px 14px 20px #3D82B1;
   margin-top: 5%;
 }
-.inputs {
+ .inputs {
     text-align: middle;
     margin-top: 30px;
   }
-  .button {
-    color: white;
-    margin-top: 20px;
-    background: #1DA1F2;
-    height: 40px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: 900;
-    box-shadow: 6px 6px 6px #CBCED1, -6px -6px 6px white;
-    transition: 0.5s;
     
-  }
-  .button:hover {
-    box-shadow: none;
-  }
   input {
     background: #ECF0F3;
     padding: 10px;
@@ -55,14 +41,13 @@
     outline: none;
     box-sizing: border-box;
   }
-  input .button{
+  input {
     display: block;
     width: 100%;
     padding: 0;
     border: none;
     outline: none;
-    box-sizing: border-box;
-    
+    box-sizing: border-box 
   }
   label {
     margin-bottom: 4px;
@@ -72,8 +57,8 @@
   }
   input::placeholder {
     color: gray;
-  }
-  
+  } 
+   
   #detail{
     width: 500px;
     height: 300px;
@@ -84,5 +69,21 @@
     box-shadow: 14px 14px 20px #3D82B1;
     margin-top: 5%;
   }
+  .style-button{
+    display: inline-block;
+    padding:0.3em 1.2em;
+    border-radius: 2em;
+    box-sizing: border-box;
+    font-family:'Roboto',sans-serif; 
+    background-color:#4eb5f1;
+    text-align:center;
+    transition: all 0.2s;
+  }
 
-  
+  .style-button:hover{
+    background-color:#4095c6;
+  }
+  .style-button{
+      display: block;
+      margin:0.2em auto;
+  }
