@@ -1,13 +1,13 @@
 import React from 'react'
-
+import "../../Styles/CheckBox.css"
 
 const AddToTableList = ({restaurantTable, restaurantTableAdded}) => {
     const handleOnClick = () => restaurantTableAdded(restaurantTable);
     
   return (
-    <div className='AddedList'>
+    <div>
         {/* <button type = "check"    className='add-table' onClick={handleOnClick}>+</button> */}
-        <input type="checkbox"   onClick={handleOnClick}/>
+        <input className='addedTable' type="checkbox"  onClick={handleOnClick}/>
     </div>
   )
 }

@@ -58,8 +58,8 @@ const CustomerForm = ({ newCustomer, customers, sendName, sendPhoneNumber, sendE
                     value={loyaltyCard}
                     onChange={handleLoyaltyCard}
                 />
-                <div className='style-button'>
-                <button onClick={() => checkLoyaltyCard(loyaltyCard)}>Check</button>
+                <div>
+                <button className='style-button' onClick={() => checkLoyaltyCard(loyaltyCard)}>Check</button>
                 </div>
             
 
@@ -95,10 +95,10 @@ const CustomerForm = ({ newCustomer, customers, sendName, sendPhoneNumber, sendE
                         value={email}
                         required
                         onChange={handleEmailChange}
-                    />
+                    /><br/>
                
 
-                <input type="submit" name="submit" value="Confirm Customer Details" />
+                <input className='style'  type="submit" name="submit" value="Confirm Customer Details" />
             </form>
             
         </div>

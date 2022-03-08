@@ -97,7 +97,7 @@ const fireSwal = withReactContent(Swal);
                 <input onChange={handleChange} name="message" type="text" value={selectedBooking.message ?? ""} id="message"/>
             </div>
             
-            <input type="submit" value="Update" id="save"/>
+            <input className='style' type="submit" value="Update" id="save"/>
         </form>
         </div>
     </div>

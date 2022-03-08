@@ -74,7 +74,7 @@ const BookingForm = ({ newBooking, email, phoneNumber, name, customers, startTim
         />
       </div>
 
-      <input type="submit" name="submit" value="Create Booking" />
+      <input className='style' type="submit" name="submit" value="Create Booking" />
     </form>
   </div>
   </div>

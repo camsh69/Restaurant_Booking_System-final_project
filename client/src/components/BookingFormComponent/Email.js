@@ -52,12 +52,12 @@ const Email = ({ bookingFormComplete }) => {
           <label>Message:</label>
           <textarea name="message" cols="50" rows="10" required/>
           </div>
-          <input type="submit" value="Send Email Confirmation" />
+          <input className='style' type="submit" value="Send Email Confirmation" />
         </form>
 
         <br/>
-        <div className='style-button'>
-          <button type='button' onClick={handleClick}>Clear Form</button>
+        <div>
+          <button className='style-button'  type='button' onClick={handleClick}>Clear Form</button>
         </div>
         </div>
         </div>

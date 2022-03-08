@@ -6,6 +6,7 @@ import Email from '../components/BookingFormComponent/Email';
 import "../Styles/BookingForm.css";
 
 
+
 const BookingFormContainer = ({ newCustomer, newBooking, customers, restaurantTables }) => {
 
   const [startTime, setStartTime] = useState("");
