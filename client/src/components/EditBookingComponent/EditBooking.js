@@ -49,7 +49,9 @@ const EditBooking = ({bookings, bookingUpdate}) => {
 
   
 
-  return (<>
+  return (
+    <div className='edit-container'>
+      <div id = "edit">
     <div>{bookingNode}</div>
 
     <form onSubmit={onSubmit} id="update-booking">
@@ -80,7 +82,8 @@ const EditBooking = ({bookings, bookingUpdate}) => {
             
             <input type="submit" value="Update" id="save"/>
         </form>
-        </>
+        </div>
+    </div>
   )
 
 }

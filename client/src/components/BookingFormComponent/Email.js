@@ -29,10 +29,11 @@ const Email = () => {
 
     
       return (
-        <>
-        <div>
+        
+        <div className='form-container'>
+          <div id = "form">
           Email component
-        </div>
+       
         <form id="emailForm" onSubmit={sendEmail}>
           <div className="field">
           <label>Booking Ref:</label>
@@ -57,7 +58,9 @@ const Email = () => {
         <div>
           <button type='button' onClick={handleClick}>Clear Form</button>
         </div>
-        </>
+        </div>
+        </div>
+        
       );
 }
 

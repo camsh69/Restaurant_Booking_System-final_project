@@ -49,7 +49,8 @@ const BookingForm = ({ newBooking, email, phoneNumber, name, customers, startTim
 }
   
   return (
-    <>
+    <div className='form-container'>
+      <div id = "detail">
     <form onSubmit={handleSubmit}>
       <h1>Add extra details</h1>
 
@@ -66,7 +67,8 @@ const BookingForm = ({ newBooking, email, phoneNumber, name, customers, startTim
 
       <input type="submit" name="submit" value="Create Booking" />
     </form>
-    </>
+  </div>
+  </div>
   );
 }
 

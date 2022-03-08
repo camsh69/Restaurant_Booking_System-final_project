@@ -43,9 +43,11 @@ const CustomerForm = ({ newCustomer, customers, sendName, sendPhoneNumber, sendE
 
     return (
         
-        <div>
-            <div>
+        <div className='form-container'>
+            <div id = "form">
+                <div className='inputs'>
                 {/* text box of laoyal with onChange event to hamdleLoyalty */}
+                <label htmlFor='loyaltyCard'>Loyalty Card Number :</label>
                 <input
                     type="text"
                     id="loyalty_card"
@@ -53,14 +55,12 @@ const CustomerForm = ({ newCustomer, customers, sendName, sendPhoneNumber, sendE
                     value={loyaltyCard}
                     onChange={handleLoyaltyCard}
                 />
-            </div>
-            <div>
                 <button onClick={() => checkLoyaltyCard(loyaltyCard)}>Check</button>
-            </div>
+            
 
             <form onSubmit={handleSubmit}>
                 <h1>Add a Customer</h1>
-                <div className="group">
+               
                     <label htmlFor="name">Guest Name:</label>
                     <input
                         type="text"
@@ -70,10 +70,9 @@ const CustomerForm = ({ newCustomer, customers, sendName, sendPhoneNumber, sendE
                         required
                         onChange={handleNameChange}
                     />
-                </div>
+               
 
-                <div className="group">
-                    <label htmlFor="phoneNumber">Guest Phone number:</label>
+                   <label htmlFor="phoneNumber">Guest Phone number:</label>
                     <input
                         type="phoneNumber"
                         id="phoneNumber"
@@ -82,9 +81,7 @@ const CustomerForm = ({ newCustomer, customers, sendName, sendPhoneNumber, sendE
                         required
                         onChange={handlePhoneNumberChange}
                     />
-                </div>
 
-                <div className="group">
                     <label htmlFor="email">Guest Email:</label>
                     <input
                         type="email"
@@ -94,11 +91,16 @@ const CustomerForm = ({ newCustomer, customers, sendName, sendPhoneNumber, sendE
                         required
                         onChange={handleEmailChange}
                     />
-                </div>
+               
 
                 <input type="submit" name="submit" value="Confirm Customer Details" />
             </form>
+            
         </div>
+    </div>
+    </div>
+ 
+   
         
     );
 }
