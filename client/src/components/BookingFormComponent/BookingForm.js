@@ -1,13 +1,26 @@
 import { useState } from 'react';
 
-
-const BookingForm = ({ newBooking, email, phoneNumber, name, customers, startTime, endTime, noOfCustomers, tables, customerId, loyaltyCard, completeFlag, customerFormComplete }) => {
+const BookingForm = ({ newBooking, email, phoneNumber, name, customers, startTime, endTime, noOfCustomers, tables, customerId, loyaltyCard, completeFlag, customerFormComplete, bookings }) => {
 
   const [message, setMessage] = useState("");
 
 
 
   const handleMessageChange = (ev) => setMessage(ev.target.value);
+
+  function getCountOfBookingsForACustomer(customerId, bookings) {
+    console.log("customer id", customerId, "bookings", bookings)
+    let visitCount = 0
+    for (let booking of bookings) {
+      if (booking.customer.id === customerId) {
+        visitCount += 1
+      }
+    }
+    console.log("visit count", visitCount)
+    if (visitCount > 0 && visitCount % 2 == 0) {
+      alert("Welcome again, give them a discount!");
+    }
+  }
 
   const handleSubmit = ev => {
     ev.preventDefault();
@@ -18,6 +31,7 @@ const BookingForm = ({ newBooking, email, phoneNumber, name, customers, startTim
 
 
     const index = customers.length-1;
+    getCountOfBookingsForACustomer(customers[index].id, bookings)
 
 
     

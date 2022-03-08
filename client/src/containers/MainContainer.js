@@ -61,6 +61,7 @@ const MainContainer = () => {
     const request = new Request();
     request.post("/api/bookings", booking)
     .then(() => requestAll())
+    .then(() => alert(`Booking created successfully!`))
   }
 
   const handleBookingUpdate = function(booking){
@@ -80,7 +81,7 @@ const MainContainer = () => {
       <Routes>
         <Route index element={<SplashScreenContainer />} />
         <Route path="/view" element={<ViewBookingContainer bookings={bookings} tables={restaurantTables}/>} />
-        <Route path="/add" element={<BookingFormContainer restaurantTables={restaurantTables} newBooking={booking => handleBookingPost(booking)} newCustomer={customer => handleCustomerPost(customer)} customers = {customers}/>} />
+        <Route path="/add" element={<BookingFormContainer restaurantTables={restaurantTables} newBooking={booking => handleBookingPost(booking)} newCustomer={customer => handleCustomerPost(customer)} customers = {customers} bookings={bookings}/>} />
         <Route path="/edit" element={<EditBookingContainer handleDeleteClick={(booking) => handleBookingDelete(booking)} bookings={bookings} bookingUpdate={(booking) => (handleBookingUpdate(booking))}/>} />
         <Route path="/clients" element={<ClientListContainer customers={customers} />} />
       </Routes>

@@ -6,7 +6,7 @@ import Email from '../components/BookingFormComponent/Email';
 import "../Styles/BookingForm.css";
 
 
-const BookingFormContainer = ({ newCustomer, newBooking, customers, restaurantTables }) => {
+const BookingFormContainer = ({ newCustomer, newBooking, customers, restaurantTables, bookings }) => {
 
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] =useState("");
@@ -26,9 +26,9 @@ const BookingFormContainer = ({ newCustomer, newBooking, customers, restaurantTa
     <div>
       <FetchTable restaurantTables={restaurantTables} sendStartTime={startTime => setStartTime(startTime)} sendEndTime={endTime => setEndTime(endTime)} sendNoOfCustomers={noOfCustomers => setNoOfCustomer(noOfCustomers)} sendTables={tables => setTables(tables)} completeFlag={flag => setFetchTableComplete(flag)}/>
     
-      <CustomerForm newCustomer={newCustomer} newBooking= {newBooking} customers ={customers} sendName={name => setName(name)} sendEmail={email => setEmail(email)} sendPhoneNumber={phoneNo => setPhoneNumber(phoneNo)} sendCustomerID={customerID => setCustomerId(customerID)} sendLoyaltyCard={loyaltyCard => setLoyaltyCard(loyaltyCard)} fetchTableComplete={fetchTableComplete} completeFlag={flag => setCustomerFormComplete(flag)}/>
+      <CustomerForm newCustomer={newCustomer} newBooking= {newBooking} customers ={customers} sendName={name => setName(name)} sendEmail={email => setEmail(email)} sendPhoneNumber={phoneNo => setPhoneNumber(phoneNo)} sendCustomerID={customerID => setCustomerId(customerID)} sendLoyaltyCard={loyaltyCard => setLoyaltyCard(loyaltyCard)} fetchTableComplete={fetchTableComplete} completeFlag={flag => setCustomerFormComplete(flag)} bookings={bookings}/>
 
-      <BookingForm newBooking={newBooking} email={email} phoneNumber={phoneNumber} name={name} customerId={customerId} customers={customers} startTime={startTime} endTime={endTime} noOfCustomers={noOfCustomers} tables={tables} loyaltyCard={loyaltyCard} customerFormComplete={customerFormComplete} completeFlag={flag => setBookingFormComplete(flag)}/>
+      <BookingForm newBooking={newBooking} email={email} phoneNumber={phoneNumber} name={name} customerId={customerId} customers={customers} startTime={startTime} endTime={endTime} noOfCustomers={noOfCustomers} tables={tables} loyaltyCard={loyaltyCard} customerFormComplete={customerFormComplete} completeFlag={flag => setBookingFormComplete(flag)} bookings={bookings}/>
 
       <Email bookingFormComplete={bookingFormComplete}/>
     </div>
