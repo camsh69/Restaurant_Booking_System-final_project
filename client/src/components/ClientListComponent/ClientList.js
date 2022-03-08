@@ -3,12 +3,16 @@ import Client from './Client'
 
 const ClientList = ({customers}) => {
 
+    const clonedCustomers = JSON.parse(JSON.stringify(customers))
+    const sortedCustomers = clonedCustomers.sort((a,b) => (b.bookings.length - a.bookings.length))
+    console.log(sortedCustomers)
+
 
    
     
     
 
-    const customerNodes = customers.map(customer =>{
+    const customerNodes = sortedCustomers.map(customer =>{
         return <Client customer={customer} key={customer.id} />
     })
 

@@ -7,7 +7,7 @@ const SplashScreenContainer = () => {
     <div className="home" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(${BannerImage})` }}>
     <div className= "headerContainer">
         <h1> BookiFy</h1>
-        <h2>Five Star Restaurant That Fits AnyOne's Taste</h2>
+        <h2>Super Mega Awesome Restaurant Table Booking App</h2>
     </div>
     </div>
   
