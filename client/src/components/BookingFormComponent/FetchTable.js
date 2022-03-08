@@ -69,7 +69,6 @@ const FetchTable = ({restaurantTables, sendStartTime, sendEndTime, sendNoOfCusto
                 value={startTime}
                 onChange={handleStartTimeChange}
                 required
-                autofocus
             />
         </div>
 
@@ -102,7 +101,7 @@ const FetchTable = ({restaurantTables, sendStartTime, sendEndTime, sendNoOfCusto
         </div>
 
         <div>
-            <button type="button" onClick={handleConfirm}>Confirm Time and Table(s)</button>
+            <button type="button" onClick={handleConfirm} autoFocus>Confirm Time and Table(s)</button>
         </div>
     </div>
     </div>
