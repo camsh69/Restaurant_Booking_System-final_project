@@ -7,9 +7,10 @@ import SplashScreenContainer from './SplashScreenContainer';
 import ViewBookingContainer from './ViewBookingsContainer';
 import NavBar from '../components/NavBar';
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
-
-
+const fireSwal = withReactContent(Swal);
 
 
 const MainContainer = () => {
@@ -41,7 +42,7 @@ const MainContainer = () => {
   const handleCustomerPost = function(customer){
     const request = new Request();
     request.post("/api/customers", customer)
-    .then(() => requestAll())
+    .then(() => requestAll());
   }
 
   const findBookingById = function(id){
@@ -54,24 +55,28 @@ const MainContainer = () => {
     const request = new Request();
     const url = "/api/bookings/" + id
     request.delete(url)
-    .then(() => requestAll())
+    .then(() => requestAll());
   }
 
   const handleBookingPost = function(booking){
     const request = new Request();
     request.post("/api/bookings", booking)
     .then(() => requestAll())
-    .then(() => alert(`Booking created successfully!`))
+    .then(() =>  fireSwal.fire(
+      'Success',
+      'Booking Created Successfully',
+      'success'
+    ));
   }
 
   const handleBookingUpdate = function(booking){
     const request = new Request();
     request.patch('/api/bookings/' + booking.id, booking)
-    .then(() => requestAll())
+    .then(() => requestAll());
   }
 
     useEffect(()=>{
-      requestAll()
+      requestAll();
     }, [])
 
 
