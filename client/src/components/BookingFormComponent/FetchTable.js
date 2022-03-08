@@ -1,7 +1,7 @@
 import  React, {useState} from 'react';
 import AddToTableList from './AddToTableList';
 
-const FetchTable = ({restaurantTables, sendStartTime, sendEndTime, sendNoOfCustomers, sendTables}) => {
+const FetchTable = ({restaurantTables, sendStartTime, sendEndTime, sendNoOfCustomers, sendTables, completeFlag}) => {
     
     const [startTime, setStartTime] = useState("");
     const [endTime, setEndTime] = useState("");
@@ -34,6 +34,7 @@ const FetchTable = ({restaurantTables, sendStartTime, sendEndTime, sendNoOfCusto
         sendEndTime(endTime);
         sendNoOfCustomers(parseInt(noOfCustomers));
         sendTables(tables);
+        completeFlag(true);
     }
      
     return (

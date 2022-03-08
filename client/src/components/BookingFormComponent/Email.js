@@ -7,7 +7,7 @@ import withReactContent from 'sweetalert2-react-content';
 
 const fireSwal = withReactContent(Swal);
 
-const Email = () => {
+const Email = ({ bookingFormComplete }) => {
 
     function sendEmail(e) {
         e.preventDefault();    
@@ -29,9 +29,11 @@ const Email = () => {
 
     
       return (
+        !bookingFormComplete ? "" :
         
         <div className='form-container'>
           <div id = "form">
+        
           Email component
        
         <form id="emailForm" onSubmit={sendEmail}>

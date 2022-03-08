@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const BookingForm = ({ newBooking, email, phoneNumber, name, customers, startTime, endTime, noOfCustomers, tables, customerId, loyaltyCard }) => {
+const BookingForm = ({ newBooking, email, phoneNumber, name, customers, startTime, endTime, noOfCustomers, tables, customerId, loyaltyCard, completeFlag, customerFormComplete }) => {
 
   const [message, setMessage] = useState("");
 
@@ -8,6 +8,9 @@ const BookingForm = ({ newBooking, email, phoneNumber, name, customers, startTim
 
   const handleSubmit = ev => {
     ev.preventDefault();
+
+    completeFlag(true);
+
 
     const index = customers.length-1;
 
@@ -44,13 +47,19 @@ const BookingForm = ({ newBooking, email, phoneNumber, name, customers, startTim
         tables: tables      
       });
 
-      window.location.reload()
+
+      // window.location.reload()
   }
 }
   
   return (
+
+
+    !customerFormComplete ? "" :
+  
     <div className='form-container'>
       <div id = "detail">
+
     <form onSubmit={handleSubmit}>
       <h1>Add extra details</h1>
 
