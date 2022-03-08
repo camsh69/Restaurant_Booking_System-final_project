@@ -65,7 +65,9 @@ const fireSwal = withReactContent(Swal);
 
   
 
-  return (<>
+  return (
+    <div className='edit-container'>
+      <div id = "edit">
     <div>{bookingNode}</div>
 
     <form onSubmit={onSubmit} id="update-booking">
@@ -96,7 +98,8 @@ const fireSwal = withReactContent(Swal);
             
             <input type="submit" value="Update" id="save"/>
         </form>
-        </>
+        </div>
+    </div>
   )
 
 }

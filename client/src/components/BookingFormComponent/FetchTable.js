@@ -37,8 +37,9 @@ const FetchTable = ({restaurantTables, sendStartTime, sendEndTime, sendNoOfCusto
     }
      
     return (
-        <>
-
+     <div className='form-container'>
+        <div id = "form">
+        
         <div className='start-time'>
             <label htmlFor='datetime'>Start Time: </label>
             <input
@@ -81,7 +82,8 @@ const FetchTable = ({restaurantTables, sendStartTime, sendEndTime, sendNoOfCusto
         <div>
             <button type="button" onClick={handleConfirm}>Confirm Time and Table(s)</button>
         </div>
-    </>
+    </div>
+    </div>
       
     );
 }

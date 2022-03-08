@@ -3,6 +3,7 @@ import CustomerForm from '../components/BookingFormComponent/CustomerForm';
 import FetchTable from '../components/BookingFormComponent/FetchTable';
 import BookingForm from '../components/BookingFormComponent/BookingForm';
 import Email from '../components/BookingFormComponent/Email';
+import "../Styles/BookingForm.css";
 
 
 const BookingFormContainer = ({ newCustomer, newBooking, customers, restaurantTables }) => {
