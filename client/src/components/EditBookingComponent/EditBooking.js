@@ -1,5 +1,9 @@
 import React, {useState} from 'react'
 import Booking from './Booking'
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
+
+
 
 const EditBooking = ({bookings, bookingUpdate}) => {
 
@@ -11,11 +15,11 @@ const EditBooking = ({bookings, bookingUpdate}) => {
   const dt = Date.parse(strDate);  
   return dt;  
 }
-
+const fireSwal = withReactContent(Swal);
 
   const bookingNode = bookings.map(booking => 
     {
-      if(toTimestamp(booking.startTime) > Date.now()){
+      if(toTimestamp(booking.startTime) < Date.now()){
       
       return <Booking passedDownSetBooking={(value) => setSelectedBooking(value)}
       passedDownSetCustomer={(value) => setSelectedCustomer(value)}
@@ -25,7 +29,6 @@ const EditBooking = ({bookings, bookingUpdate}) => {
     })
 
     const handleChange = (e) => {
-
       const value = e.target.value;
       setSelectedBooking({
       ...selectedBooking,
@@ -37,12 +40,25 @@ const EditBooking = ({bookings, bookingUpdate}) => {
     const onSubmit = (e) =>{
 
       e.preventDefault();
+      const startTimeCompare = toTimestamp(selectedBooking.startTime);
+      const endTimeCompare = toTimestamp(selectedBooking.endTime);
+      if (startTimeCompare > endTimeCompare){
+        return fireSwal.fire(
+          'Cannot update booking',
+          'The start time cannot be later than the end time',
+          'error'
+        )
+
+      }
       
       bookingUpdate(selectedBooking)
 
       setSelectedCustomer("")
       setSelectedBooking({})
     }
+
+    const currentTime = new Date();
+    // console.log(currentTime.toGMTString())
 
     
 
