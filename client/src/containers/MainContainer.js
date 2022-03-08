@@ -81,7 +81,7 @@ const MainContainer = () => {
         <Route index element={<SplashScreenContainer />} />
         <Route path="/view" element={<ViewBookingContainer bookings={bookings} tables={restaurantTables}/>} />
         <Route path="/add" element={<BookingFormContainer restaurantTables={restaurantTables} newBooking={booking => handleBookingPost(booking)} newCustomer={customer => handleCustomerPost(customer)} customers = {customers}/>} />
-        <Route path="/edit" element={<EditBookingContainer bookings={bookings} bookingUpdate={(booking) => (handleBookingUpdate(booking))}/>} />
+        <Route path="/edit" element={<EditBookingContainer handleDeleteClick={(booking) => handleBookingDelete(booking)} bookings={bookings} bookingUpdate={(booking) => (handleBookingUpdate(booking))}/>} />
         <Route path="/clients" element={<ClientListContainer customers={customers} />} />
       </Routes>
     </Router>

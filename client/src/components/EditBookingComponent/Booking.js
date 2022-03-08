@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Booking = ({booking, passedDownSetBooking, passedDownSetCustomer}) => {
+const Booking = ({booking, passedDownSetBooking, passedDownSetCustomer, handleDeleteClick}) => {
 
   const handleClick = (booking) => {
     passedDownSetBooking(booking)
@@ -9,7 +9,7 @@ const Booking = ({booking, passedDownSetBooking, passedDownSetCustomer}) => {
 
   }
   return (
-    <div >Booking Reference: &nbsp; {booking.id} <button onClick={() => handleClick(booking) } >Fill Form</button> </div>
+    <div >Booking Reference: &nbsp; {booking.id} <button onClick={() => handleClick(booking) } >Fill Form</button><button onClick={() => handleDeleteClick(booking.id) } >Delete</button> </div>
   )
 }
 
