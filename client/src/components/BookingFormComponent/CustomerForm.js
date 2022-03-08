@@ -97,7 +97,7 @@ const CustomerForm = ({ newCustomer, customers, sendName, sendPhoneNumber, sendE
                     />
                
 
-                <input type="submit" name="submit" value="Confirm Customer Details" />
+                <input type="submit" name="submit" value="Confirm Customer Details" autoFocus/>
             </form>
             
         </div>

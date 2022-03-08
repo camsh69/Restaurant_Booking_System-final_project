@@ -69,9 +69,6 @@ const BookingForm = ({ newBooking, email, phoneNumber, name, customers, startTim
         receipt: null,
         tables: tables      
       });
-
-
-      // window.location.reload()
   }
 }
   
@@ -94,11 +91,10 @@ const BookingForm = ({ newBooking, email, phoneNumber, name, customers, startTim
           name="message"
           value={message}
           onChange={handleMessageChange}
-          autofocus
         />
       </div>
 
-      <input type="submit" name="submit" value="Create Booking" />
+      <input type="submit" name="submit" value="Create Booking" autoFocus />
     </form>
   </div>
   </div>

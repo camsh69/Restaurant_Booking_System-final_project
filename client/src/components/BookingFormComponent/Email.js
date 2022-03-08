@@ -7,7 +7,7 @@ import withReactContent from 'sweetalert2-react-content';
 
 const fireSwal = withReactContent(Swal);
 
-const Email = ({ bookingFormComplete, bookings }) => {
+const Email = ({ bookingFormComplete, bookings, startTime }) => {
 
     function sendEmail(e) {
         e.preventDefault();    
@@ -29,7 +29,7 @@ const Email = ({ bookingFormComplete, bookings }) => {
 
       const index = bookings.length -1;
 
-      const start = new Date(bookings[index].startTime);
+      const start = new Date(startTime);
 
       return (
         !bookingFormComplete ? "" :
@@ -54,9 +54,9 @@ const Email = ({ bookingFormComplete, bookings }) => {
           </div>
           <div className="field">
           <label>Message:</label>
-          <textarea name="message" cols="50" rows="10" value={`Booking on ${start.toLocaleString()} confirmed.`} required/>
+          <textarea name="message" cols="50" rows="10" value={`Booking on ${start.toLocaleString()} confirmed.`} readOnly required/>
           </div>
-          <input type="submit" value="Send Email Confirmation" autofocus/>
+          <input type="submit" value="Send Email Confirmation" autoFocus/>
         </form>
 
         <br/>
