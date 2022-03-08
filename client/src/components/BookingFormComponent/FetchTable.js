@@ -23,9 +23,9 @@ const FetchTable = ({restaurantTables, sendStartTime, sendEndTime, sendNoOfCusto
 
     const tableList = restaurantTables.map(restaurantTable => {
         return (
-            <li>
+            <li key={restaurantTable.id}>
             <span> Table no:  {restaurantTable.id}  covers:  {restaurantTable.covers} </span>
-             <AddToTableList key={restaurantTable.id} restaurantTable={restaurantTable} restaurantTableAdded={restaurantTable => onClick(restaurantTable)}  />
+             <AddToTableList  restaurantTable={restaurantTable} restaurantTableAdded={restaurantTable => onClick(restaurantTable)}  />
             </li>
           );
     })
