@@ -21,7 +21,7 @@ position: relative;
   background: #ECF0F3;
   box-shadow: 14px 14px 20px #CBCED1, -14px -14px 20px white;
 }
-  button {
+  /* .button {
     color: white;
     margin-top: 20px;
     background: #1DA1F2;
@@ -31,11 +31,11 @@ position: relative;
     font-weight: 900;
     box-shadow: 6px 6px 6px #CBCED1, -6px -6px 6px white;
     transition: 0.5s;
-  }
-  button:hover {
+  } */
+  .button:hover {
     box-shadow: none;
   }
-  label, button {
+  label {
     display: block;
     width: 50%;
     padding: 0;

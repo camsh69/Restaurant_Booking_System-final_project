@@ -8,7 +8,6 @@ const FetchTable = ({restaurantTables, sendStartTime, sendEndTime, sendNoOfCusto
     const [endTime, setEndTime] = useState("");
     const [noOfCustomers, setNoOfCustomer] = useState(1);
     const [tables, setTables] = useState([])
-    // const [showMessage, setShowMessage] = useState(false);
 
 
     const handleNoOfCustomersChange = (ev) => setNoOfCustomer(parseInt(ev.target.value));
@@ -87,7 +86,7 @@ const FetchTable = ({restaurantTables, sendStartTime, sendEndTime, sendNoOfCusto
         </ul>
         </div>
 
-        <div>
+        <div className='button'>
             <button type="button" onClick={handleConfirm} >Confirm Time and Table(s)</button>
         </div>
     </div>

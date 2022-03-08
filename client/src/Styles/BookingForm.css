@@ -19,10 +19,10 @@
   margin-top: 5%;
 }
 .inputs {
-    text-align: left;
+    text-align: middle;
     margin-top: 30px;
   }
-  button {
+  .button {
     color: white;
     margin-top: 20px;
     background: #1DA1F2;
@@ -32,8 +32,9 @@
     font-weight: 900;
     box-shadow: 6px 6px 6px #CBCED1, -6px -6px 6px white;
     transition: 0.5s;
+    
   }
-  button:hover {
+  .button:hover {
     box-shadow: none;
   }
   input {
@@ -44,8 +45,9 @@
     font-size: 14px;
     border-radius: 50px;
     box-shadow: inset 6px 6px 6px #CBCED1, inset -6px -6px 6px white;
+    text-align: center;
   }
-  label, button {
+  label {
     display: block;
     width: 50%;
     padding: 0;
@@ -53,13 +55,14 @@
     outline: none;
     box-sizing: border-box;
   }
-  input {
+  input .button{
     display: block;
     width: 100%;
     padding: 0;
     border: none;
     outline: none;
     box-sizing: border-box;
+    
   }
   label {
     margin-bottom: 4px;
@@ -70,10 +73,7 @@
   input::placeholder {
     color: gray;
   }
-  .inputs {
-    text-align: left;
-    margin-top: 30px;
-  }
+  
   #detail{
     width: 500px;
     height: 300px;

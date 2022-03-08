@@ -1,7 +1,6 @@
 import React from 'react';
 import emailjs from 'emailjs-com';
 import emailkey from '../../emailkey';
-import './email.css';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 
@@ -57,7 +56,7 @@ const Email = ({ bookingFormComplete }) => {
         </form>
 
         <br/>
-        <div>
+        <div className='button'>
           <button type='button' onClick={handleClick}>Clear Form</button>
         </div>
         </div>
