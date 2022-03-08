@@ -5,7 +5,7 @@ import withReactContent from 'sweetalert2-react-content';
 
 
 
-const EditBooking = ({bookings, bookingUpdate}) => {
+const EditBooking = ({bookings, bookingUpdate, handleDeleteClick}) => {
 
 
   const [selectedBooking, setSelectedBooking] = useState({})
@@ -21,7 +21,7 @@ const fireSwal = withReactContent(Swal);
     {
       if(toTimestamp(booking.startTime) < Date.now()){
       
-      return <Booking passedDownSetBooking={(value) => setSelectedBooking(value)}
+      return <Booking handleDeleteClick={handleDeleteClick} passedDownSetBooking={(value) => setSelectedBooking(value)}
       passedDownSetCustomer={(value) => setSelectedCustomer(value)}
         booking={booking} key={booking.id}/>}
       else 

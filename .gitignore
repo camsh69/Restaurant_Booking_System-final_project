@@ -2,3 +2,4 @@
 server/restaurantBookingService/db/restaurantbookingservice_db.mv.db
 server/restaurantBookingService/db/restaurantbookingservice_db.mv.db
 server/restaurantBookingService/db/restaurantbookingservice_db.mv.db
+*.db
