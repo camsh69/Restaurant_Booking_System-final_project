@@ -6,7 +6,7 @@ import Email from '../components/BookingFormComponent/Email';
 import "../Styles/BookingForm.css";
 
 
-const BookingFormContainer = ({ newCustomer, newBooking, customers, restaurantTables }) => {
+const BookingFormContainer = ({ newCustomer, newBooking, customers, restaurantTables, bookings }) => {
 
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] =useState("");
@@ -30,7 +30,7 @@ const BookingFormContainer = ({ newCustomer, newBooking, customers, restaurantTa
 
       <BookingForm newBooking={newBooking} email={email} phoneNumber={phoneNumber} name={name} customerId={customerId} customers={customers} startTime={startTime} endTime={endTime} noOfCustomers={noOfCustomers} tables={tables} loyaltyCard={loyaltyCard} customerFormComplete={customerFormComplete} completeFlag={flag => setBookingFormComplete(flag)}/>
 
-      <Email bookingFormComplete={bookingFormComplete}/>
+      <Email bookingFormComplete={bookingFormComplete} bookings={bookings}/>
     </div>
   )
 }
