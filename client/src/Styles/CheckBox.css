@@ -1,0 +1,8 @@
+.addedList{
+    display: block;
+    width: 50%;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}

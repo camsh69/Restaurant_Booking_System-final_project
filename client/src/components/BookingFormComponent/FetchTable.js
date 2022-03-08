@@ -1,23 +1,29 @@
 import  React, {useState} from 'react';
 import AddToTableList from './AddToTableList';
 
+
 const FetchTable = ({restaurantTables, sendStartTime, sendEndTime, sendNoOfCustomers, sendTables, completeFlag}) => {
     
     const [startTime, setStartTime] = useState("");
     const [endTime, setEndTime] = useState("");
     const [noOfCustomers, setNoOfCustomer] = useState(1);
     const [tables, setTables] = useState([])
+    // const [showMessage, setShowMessage] = useState(false);
+
 
     const handleNoOfCustomersChange = (ev) => setNoOfCustomer(parseInt(ev.target.value));
     const handleStartTimeChange = (ev) => setStartTime(ev.target.value);
     const handleEndTimeChange = (ev) => setEndTime(ev.target.value);
+    
     
 
     const tableList = restaurantTables.map(restaurantTable => {
         return (
             <li>
             <span> Table no:  {restaurantTable.id}  covers:  {restaurantTable.covers} </span>
-             <AddToTableList key={restaurantTable.id} restaurantTable={restaurantTable} restaurantTableAdded={restaurantTable => onClick(restaurantTable)}  />
+             <AddToTableList key={restaurantTable.id} restaurantTable={restaurantTable} restaurantTableAdded={restaurantTable => onClick(restaurantTable)} 
+        
+                  />
             </li>
           );
     })
@@ -28,6 +34,7 @@ const FetchTable = ({restaurantTables, sendStartTime, sendEndTime, sendNoOfCusto
           setTables(updatedTableList)
         }
       }
+
 
     const handleConfirm = () => {
         sendStartTime(startTime);
@@ -81,7 +88,7 @@ const FetchTable = ({restaurantTables, sendStartTime, sendEndTime, sendNoOfCusto
         </div>
 
         <div>
-            <button type="button" onClick={handleConfirm}>Confirm Time and Table(s)</button>
+            <button type="button" onClick={handleConfirm} >Confirm Time and Table(s)</button>
         </div>
     </div>
     </div>
