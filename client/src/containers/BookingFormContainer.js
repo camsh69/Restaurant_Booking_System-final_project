@@ -31,4 +31,4 @@ const BookingFormContainer = ({ newCustomer, newBooking, customers, restaurantTa
   )
 }
  
-export default BookingFormContainer
+export default BookingFormContainer;
