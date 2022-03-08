@@ -57,8 +57,7 @@ const fireSwal = withReactContent(Swal);
       setSelectedBooking({})
     }
 
-    const currentTime = new Date();
-    // console.log(currentTime.toGMTString())
+    
 
     
 

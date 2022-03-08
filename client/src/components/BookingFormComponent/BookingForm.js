@@ -1,18 +1,27 @@
 import { useState } from 'react';
 
+
 const BookingForm = ({ newBooking, email, phoneNumber, name, customers, startTime, endTime, noOfCustomers, tables, customerId, loyaltyCard, completeFlag, customerFormComplete }) => {
 
   const [message, setMessage] = useState("");
+
+
 
   const handleMessageChange = (ev) => setMessage(ev.target.value);
 
   const handleSubmit = ev => {
     ev.preventDefault();
 
+    
+
     completeFlag(true);
 
 
     const index = customers.length-1;
+
+
+    
+    
 
     if(customerId === "") {
       newBooking({

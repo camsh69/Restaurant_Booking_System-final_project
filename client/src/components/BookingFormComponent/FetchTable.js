@@ -1,5 +1,7 @@
 import  React, {useState} from 'react';
 import AddToTableList from './AddToTableList';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
 const FetchTable = ({restaurantTables, sendStartTime, sendEndTime, sendNoOfCustomers, sendTables, completeFlag}) => {
     
@@ -11,6 +13,12 @@ const FetchTable = ({restaurantTables, sendStartTime, sendEndTime, sendNoOfCusto
     const handleNoOfCustomersChange = (ev) => setNoOfCustomer(parseInt(ev.target.value));
     const handleStartTimeChange = (ev) => setStartTime(ev.target.value);
     const handleEndTimeChange = (ev) => setEndTime(ev.target.value);
+
+    const toTimestamp = (strDate) => {  
+        const dt = Date.parse(strDate);  
+        return dt;  
+      }
+      const fireSwal = withReactContent(Swal);
     
 
     const tableList = restaurantTables.map(restaurantTable => {
@@ -30,6 +38,18 @@ const FetchTable = ({restaurantTables, sendStartTime, sendEndTime, sendNoOfCusto
       }
 
     const handleConfirm = () => {
+
+        const startTimeCompare = toTimestamp(startTime);
+        const endTimeCompare = toTimestamp(endTime);
+        if (startTimeCompare > endTimeCompare){
+            return fireSwal.fire(
+                'Cannot create booking',
+                'The start time cannot be later than the end time',
+                'error'
+      )
+
+    }
+
         sendStartTime(startTime);
         sendEndTime(endTime);
         sendNoOfCustomers(parseInt(noOfCustomers));
