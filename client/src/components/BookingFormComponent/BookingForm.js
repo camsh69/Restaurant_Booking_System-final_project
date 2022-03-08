@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const BookingForm = ({ newBooking, email, phoneNumber, name, customers, startTime, endTime, noOfCustomers, tables, customerId, loyaltyCard }) => {
+const BookingForm = ({ newBooking, email, phoneNumber, name, customers, startTime, endTime, noOfCustomers, tables, customerId, loyaltyCard, completeFlag }) => {
 
   const [message, setMessage] = useState("");
 
@@ -44,7 +44,9 @@ const BookingForm = ({ newBooking, email, phoneNumber, name, customers, startTim
         tables: tables      
       });
 
-      window.location.reload()
+      completeFlag(true);
+
+      // window.location.reload()
   }
 }
   

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const CustomerForm = ({ newCustomer, customers, sendName, sendPhoneNumber, sendEmail, sendCustomerID, sendLoyaltyCard }) => {
+const CustomerForm = ({ newCustomer, customers, sendName, sendPhoneNumber, sendEmail, sendCustomerID, sendLoyaltyCard, completeFlag, fetchTableComplete }) => {
 
     const [name, setName] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
@@ -38,11 +38,13 @@ const CustomerForm = ({ newCustomer, customers, sendName, sendPhoneNumber, sendE
 
         sendName(name);
         sendEmail(email);
-        sendPhoneNumber(phoneNumber);            
+        sendPhoneNumber(phoneNumber);
+        completeFlag(true);            
     }
 
     return (
         
+        !fetchTableComplete ? "" : 
         <div>
             <div>
                 {/* text box of laoyal with onChange event to hamdleLoyalty */}
