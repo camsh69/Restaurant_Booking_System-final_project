@@ -8,13 +8,13 @@
     text-align: center;
     justify-content: center;
     place-items: center;
-    overflow: hidden;
     font-family: poppins;
 }
 #edit{
 position: relative;
+  margin-top: 30%;
   width: 350px;
-  height: 500px;
+  height: 100%;
   border-radius: 20px;
   padding: 40px;
   border: solid black;
