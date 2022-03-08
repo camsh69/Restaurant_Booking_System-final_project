@@ -28,8 +28,8 @@ public class Customer{
     private String loyaltyCard;
 
     @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY, cascade=CascadeType.ALL)
-    @JsonBackReference
-//    @JsonIgnoreProperties({"customer"})
+//    @JsonBackReference
+    @JsonIgnoreProperties({"customer"})
     private List<Booking>bookings;
 
 
