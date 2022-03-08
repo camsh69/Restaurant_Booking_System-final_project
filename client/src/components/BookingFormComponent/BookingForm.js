@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const BookingForm = ({ newBooking, email, phoneNumber, name, customers, startTime, endTime, noOfCustomers, tables, customerId, loyaltyCard, completeFlag }) => {
+const BookingForm = ({ newBooking, email, phoneNumber, name, customers, startTime, endTime, noOfCustomers, tables, customerId, loyaltyCard, completeFlag, customerFormComplete }) => {
 
   const [message, setMessage] = useState("");
 
@@ -51,6 +51,8 @@ const BookingForm = ({ newBooking, email, phoneNumber, name, customers, startTim
 }
   
   return (
+
+    !customerFormComplete ? "" :
     <>
     <form onSubmit={handleSubmit}>
       <h1>Add extra details</h1>
