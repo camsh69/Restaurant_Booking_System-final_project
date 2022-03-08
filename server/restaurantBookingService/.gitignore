@@ -33,4 +33,5 @@ build/
 .vscode/
 
 server/restaurantBookingService/db
+server/restaurantBookingService/db/restaurantbookingservice_db.trace.db
 
