@@ -30,7 +30,7 @@ const BookingFormContainer = ({ newCustomer, newBooking, customers, restaurantTa
 
       <BookingForm newBooking={newBooking} email={email} phoneNumber={phoneNumber} name={name} customerId={customerId} customers={customers} startTime={startTime} endTime={endTime} noOfCustomers={noOfCustomers} tables={tables} loyaltyCard={loyaltyCard} customerFormComplete={customerFormComplete} completeFlag={flag => setBookingFormComplete(flag)} bookings={bookings}/>
 
-      <Email bookingFormComplete={bookingFormComplete}/>
+      <Email bookingFormComplete={bookingFormComplete} bookings={bookings}/>
     </div>
   )
 }
