@@ -94,6 +94,7 @@ const BookingForm = ({ newBooking, email, phoneNumber, name, customers, startTim
           name="message"
           value={message}
           onChange={handleMessageChange}
+          autofocus
         />
       </div>
 

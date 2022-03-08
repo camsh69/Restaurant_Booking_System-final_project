@@ -57,6 +57,7 @@ const CustomerForm = ({ newCustomer, customers, sendName, sendPhoneNumber, sendE
                     name="loyalty_card"
                     value={loyaltyCard}
                     onChange={handleLoyaltyCard}
+                    autofocus
                 />
                 <button onClick={() => checkLoyaltyCard(loyaltyCard)}>Check</button>
             

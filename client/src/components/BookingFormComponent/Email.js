@@ -7,7 +7,7 @@ import withReactContent from 'sweetalert2-react-content';
 
 const fireSwal = withReactContent(Swal);
 
-const Email = ({ bookingFormComplete }) => {
+const Email = ({ bookingFormComplete, bookings }) => {
 
     function sendEmail(e) {
         e.preventDefault();    
@@ -27,33 +27,36 @@ const Email = ({ bookingFormComplete }) => {
 
       const handleClick = () => window.location.reload(); 
 
-    
+      const index = bookings.length -1;
+
+      const start = new Date(bookings[index].startTime);
+
       return (
         !bookingFormComplete ? "" :
         
         <div className='form-container'>
           <div id = "form">
         
-          Email component
+          Email Booking Confirmation:
        
         <form id="emailForm" onSubmit={sendEmail}>
           <div className="field">
           <label>Booking Ref:</label>
-          <input type="text" name="booking_ref" required />
+          <input type="text" name="booking_ref" value={bookings[index].id} readOnly required />
           </div>
            <div className="field">
            <label>Name:</label>
-          <input type="text" name="to_name" required />
+          <input type="text" name="to_name" value={bookings[index].customer.name} readOnly required />
           </div>
           <div className="field">
           <label>Email:</label>
-          <input type="email" name="to_email" required />
+          <input type="email" name="to_email" value={bookings[index].customer.email} readOnly required />
           </div>
           <div className="field">
           <label>Message:</label>
-          <textarea name="message" cols="50" rows="10" required/>
+          <textarea name="message" cols="50" rows="10" value={`Booking on ${start.toLocaleString()} confirmed.`} required/>
           </div>
-          <input type="submit" value="Send Email Confirmation" />
+          <input type="submit" value="Send Email Confirmation" autofocus/>
         </form>
 
         <br/>
