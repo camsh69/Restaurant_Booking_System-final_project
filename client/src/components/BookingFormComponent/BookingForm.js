@@ -9,6 +9,9 @@ const BookingForm = ({ newBooking, email, phoneNumber, name, customers, startTim
   const handleSubmit = ev => {
     ev.preventDefault();
 
+    completeFlag(true);
+
+
     const index = customers.length-1;
 
     if(customerId === "") {
@@ -44,7 +47,6 @@ const BookingForm = ({ newBooking, email, phoneNumber, name, customers, startTim
         tables: tables      
       });
 
-      completeFlag(true);
 
       // window.location.reload()
   }
