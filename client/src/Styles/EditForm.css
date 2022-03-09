@@ -13,9 +13,9 @@
 #edit{
 position: relative;
   margin-top: 30%;
-  width: 350px;
+  width: 500px;
   height: 100%;
-  border-radius: 20px;
+  border-radius: 5px;
   padding: 40px;
   border: solid black;
   background: #ECF0F3;
@@ -49,28 +49,32 @@ position: relative;
   }
   .style-id{
     color: white;
-    width: 40%;
+    width: 30%;
     margin-top: 5px;
     background: #1DA1F2;
     height: 40px;
-    border-radius: 20px;
+    border-radius: 5px;
     cursor: pointer;
     font-weight: 900;
     box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
     transition: 0.5s;
+    margin-right: 10px;
+    position: relative;
+
   }
-  .style-id1{
+  .style-id2{
     color: white;
-    width: 40%;
+    width: 30%;
     margin-top: 5px;
     background: #1DA1F2;
     height: 40px;
-    border-radius: 20px;
+    border-radius: 5px;
     cursor: pointer;
     font-weight: 900;
     box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
     transition: 0.5s;
     position: relative;
+    top:6px;
   }
   
 
