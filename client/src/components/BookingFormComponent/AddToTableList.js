@@ -5,9 +5,9 @@ const AddToTableList = ({restaurantTable, restaurantTableAdded}) => {
     const handleOnClick = () => restaurantTableAdded(restaurantTable);
     
   return (
-    <div className="checkBoxAndText">
+    <div className="table">
         {/* <button type = "check"    className='add-table' onClick={handleOnClick}>+</button> */}
-        <input type="checkbox" className='addedTable' onClick={handleOnClick}/>
+        <input className='style-checkbox' type="checkbox"  onClick={handleOnClick}/>
     </div>
   )
 }

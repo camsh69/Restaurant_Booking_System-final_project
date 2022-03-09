@@ -10,12 +10,13 @@
 }
 #form{
   width: 500px;
-  height: 750px;
+  height: 700px;
   border-radius: 5px;
   padding: 40px;
   border: solid black;
   background: #ECF0F3;
   margin-top: 5%;
+  box-shadow: 14px 14px 20px #3D82B1;
 }
  .inputs {
     text-align: middle;
@@ -62,7 +63,7 @@
    
   #detail{
     width: 500px;
-    height: 300px;
+    height: 350px;
     border-radius: 5px;
     padding: 40px;
     border: solid black;
@@ -80,7 +81,7 @@
     border-radius: 5px;
     cursor: pointer;
     font-weight: 900;
-    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+    /* box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white; */
     transition: 0.5s;
   }
   
@@ -111,5 +112,8 @@
 
   .table-list{
       text-align: justify;
+      font-size: 19px;
+     
+      
   }
   
