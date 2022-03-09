@@ -1,0 +1,17 @@
+.addedTable{
+    display: block;
+    width: 50%;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    background: #ECF0F3;
+    padding: 10px;
+    padding-left: 20px;
+    height: 50px;
+    font-size: 14px;
+    border-radius: 50px;
+    box-shadow: inset 6px 6px 6px #296e95, inset -6px -6px 6px white;
+    text-align: center;
+    position:inherit;
+}

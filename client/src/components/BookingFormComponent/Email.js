@@ -1,7 +1,6 @@
 import React from 'react';
 import emailjs from 'emailjs-com';
 import emailkey from '../../emailkey';
-import './email.css';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 
@@ -56,12 +55,12 @@ const Email = ({ bookingFormComplete, bookings, startTime, name, email }) => {
           <label>Message:</label>
           <textarea name="message" cols="50" rows="10" value={`Booking on ${start.toLocaleString()} confirmed.`} readOnly required/>
           </div>
-          <input type="submit" value="Send Email Confirmation" autoFocus/>
+          <input className='style' type="submit" value="Send Email Confirmation" autoFocus/>
         </form>
 
         <br/>
         <div>
-          <button type='button' onClick={handleClick}>Clear Form</button>
+          <button className='style-button'  type='button' onClick={handleClick}>Clear Form</button>
         </div>
         </div>
         </div>

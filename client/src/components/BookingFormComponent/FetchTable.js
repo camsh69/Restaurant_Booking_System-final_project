@@ -3,12 +3,14 @@ import AddToTableList from './AddToTableList';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 
+
 const FetchTable = ({restaurantTables, sendStartTime, sendEndTime, sendNoOfCustomers, sendTables, completeFlag}) => {
     
     const [startTime, setStartTime] = useState("");
     const [endTime, setEndTime] = useState("");
     const [noOfCustomers, setNoOfCustomer] = useState(1);
     const [tables, setTables] = useState([])
+
 
     const handleNoOfCustomersChange = (ev) => setNoOfCustomer(parseInt(ev.target.value));
     const handleStartTimeChange = (ev) => setStartTime(ev.target.value);
@@ -19,6 +21,7 @@ const FetchTable = ({restaurantTables, sendStartTime, sendEndTime, sendNoOfCusto
         return dt;  
       }
       const fireSwal = withReactContent(Swal);
+    
     
 
     const tableList = restaurantTables.map(restaurantTable => {
@@ -36,6 +39,7 @@ const FetchTable = ({restaurantTables, sendStartTime, sendEndTime, sendNoOfCusto
           setTables(updatedTableList)
         }
       }
+
 
     const handleConfirm = () => {
 
@@ -60,7 +64,7 @@ const FetchTable = ({restaurantTables, sendStartTime, sendEndTime, sendNoOfCusto
     return (
      <div className='form-container'>
         <div id = "form">
-        
+            <div className='inputs'>
         <div className='start-time'>
             <label htmlFor='datetime'>Start Time: </label>
             <input
@@ -100,9 +104,9 @@ const FetchTable = ({restaurantTables, sendStartTime, sendEndTime, sendNoOfCusto
         </ul>
         </div>
 
-        <div>
-            <button type="button" onClick={handleConfirm} autoFocus>Confirm Time and Table(s)</button>
-        </div>
+            <button className='style-button' onClick={handleConfirm} autoFocus>Confirm Time and Table(s)</button>
+        
+    </div>
     </div>
     </div>
       
