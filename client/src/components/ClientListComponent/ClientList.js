@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Client from './Client'
+import "../../Styles/Client.css"
 
 const ClientList = ({customers}) => {
 
@@ -17,9 +18,12 @@ const ClientList = ({customers}) => {
     })
 
   return (
-      <div>
+    <div className='client-container'>  
+    <div className='client'>
     {customerNodes}
     </div>
+    </div>
+  
     )
 }
 

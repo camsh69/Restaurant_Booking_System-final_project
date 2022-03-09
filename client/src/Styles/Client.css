@@ -1,0 +1,23 @@
+.client-container{
+    margin: 0;
+    width: 100vw;
+    background: hwb(197 9% 55%);
+    display: grid;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    place-items: center;
+   
+
+}
+.client{
+    width: 900px; 
+    border-radius: 5px;
+    padding: 40px;
+    border: solid black;
+    background: #ECF0F3;
+    margin-top: 5%;
+    box-shadow: 14px 14px 20px #3D82B1;
+    font-size: 40px;
+   
+}
