@@ -19,7 +19,7 @@ const fireSwal = withReactContent(Swal);
 
   const bookingNode = bookings.map(booking => 
     {
-      if(toTimestamp(booking.startTime) >= Date.now()){
+      if(toTimestamp(booking.startTime) <= Date.now()){
       
       return <Booking handleDeleteClick={handleDeleteClick} passedDownSetBooking={(value) => setSelectedBooking(value)}
       passedDownSetCustomer={(value) => setSelectedCustomer(value)}
@@ -71,26 +71,37 @@ const fireSwal = withReactContent(Swal);
     <div>{bookingNode}</div>
 
     <form onSubmit={onSubmit} id="update-booking">
+    <br />
+    <br />
             <div>
                 <label htmlFor="id">Booking Reference: </label>
                 <input disabled name="id" type="number" value={selectedBooking.id ?? ""} id="id"/>
             </div>
+            <br />
             <div>
                 <label htmlFor="customerName">Customer name: </label>
                 <input disabled name="customerName" type="text" value={selectedCustomer ?? ""} id="customerName"/>
             </div>
+            <br />
+
             <div>
                 <label htmlFor="startTime">Start Time: </label>
                 <input onChange={handleChange} name="startTime" type="datetime-local" value={selectedBooking.startTime ?? ""} id="startTime"/>
             </div>
+            <br />
+
             <div>
                 <label htmlFor="endTime">End Time: </label>
                 <input onChange={handleChange} name="endTime" type="datetime-local" value={selectedBooking.endTime ?? ""} id="endTime"/>
             </div>
+            <br />
+
             <div>
                 <label htmlFor="diners">Diners: </label>
                 <input onChange={handleChange} name="diners" type="number" value={selectedBooking.diners ?? ""} id="diners"/>
             </div>
+            <br />
+
             <div>
                 <label htmlFor="message">Message: </label>
                 <input onChange={handleChange} name="message" type="text" value={selectedBooking.message ?? ""} id="message"/>

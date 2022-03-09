@@ -55,7 +55,7 @@ const Email = ({ bookingFormComplete, bookings, startTime, name, email }) => {
           <label>Message:</label>
           <textarea name="message" cols="50" rows="10" value={`Booking on ${start.toLocaleString()} confirmed.`} readOnly required/>
           </div>
-          <input className='style' type="submit" value="Send Email Confirmation" autoFocus/>
+          <input className='style-button' type="submit" value="Send Email Confirmation" autoFocus/>
         </form>
 
         <br/>

@@ -86,6 +86,11 @@ const CustomerForm = ({ newCustomer, customers, sendName, sendPhoneNumber, sendE
                         required
                         onChange={handlePhoneNumberChange}
                     />
+                    <br />
+                    <br />
+                    
+                    
+
 
                     <label htmlFor="email">Guest Email:</label>
                     <input
@@ -98,7 +103,7 @@ const CustomerForm = ({ newCustomer, customers, sendName, sendPhoneNumber, sendE
                     /><br/>
                
 
-                <input className='style'  type="submit" name="submit" value="Confirm Customer Details" autoFocus/>
+                <input className='style-button'  type="submit" name="submit" value="Confirm Customer Details" autoFocus/>
             </form>
             
         </div>

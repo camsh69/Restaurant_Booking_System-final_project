@@ -84,7 +84,7 @@ const BookingForm = ({ newBooking, email, phoneNumber, name, customers, startTim
         />
       </div>
 
-      <input className='style' type="submit" name="submit" value="Create Booking" autoFocus/>
+      <input className='style-button' type="submit" name="submit" value="Create Booking" autoFocus/>
     </form>
   </div>
   </div>

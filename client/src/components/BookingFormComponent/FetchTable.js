@@ -75,6 +75,7 @@ const FetchTable = ({restaurantTables, sendStartTime, sendEndTime, sendNoOfCusto
                 required
             />
         </div>
+        <br />
 
         <div className='end-time'>
             <label htmlFor='datetime'>End Time: </label>
@@ -86,6 +87,9 @@ const FetchTable = ({restaurantTables, sendStartTime, sendEndTime, sendNoOfCusto
                 required
             />
         </div>
+        <br />
+
+
         <div className='no-of-guest'>
         <label htmlFor='noOfGuest'>No Of Guests</label>
         <input
@@ -97,6 +101,8 @@ const FetchTable = ({restaurantTables, sendStartTime, sendEndTime, sendNoOfCusto
             min="1"
         />
         </div>
+        <br />
+
 
         <div className='table-list'>
         <ul>

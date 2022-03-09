@@ -1,5 +1,6 @@
 .addedTable{
-    display: block;
+    display: flex;
+    align-items: baseline;
     width: 50%;
     padding: 0;
     border: none;
@@ -10,8 +11,15 @@
     padding-left: 20px;
     height: 50px;
     font-size: 14px;
-    border-radius: 50px;
-    box-shadow: inset 6px 6px 6px #296e95, inset -6px -6px 6px white;
-    text-align: center;
-    position:inherit;
+    border-radius: 5px;
+    /* box-shadow: inset 6px 6px 6px #296e95, inset -6px -6px 6px white; */
+    text-align: left;
+    /* position:relative; */
+
 }
+/* 
+.checkBoxAndText{
+    display: flex;
+    align-items: baseline;
+
+} */

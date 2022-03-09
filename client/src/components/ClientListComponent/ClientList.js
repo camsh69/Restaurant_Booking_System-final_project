@@ -5,7 +5,7 @@ const ClientList = ({customers}) => {
 
     const clonedCustomers = JSON.parse(JSON.stringify(customers))
     const sortedCustomers = clonedCustomers.sort((a,b) => (b.bookings.length - a.bookings.length))
-    console.log(sortedCustomers)
+    
 
 
    
