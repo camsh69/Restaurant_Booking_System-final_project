@@ -28,12 +28,9 @@ const FetchTable = ({restaurantTables, sendStartTime, sendEndTime, sendNoOfCusto
     const fireSwal = withReactContent(Swal);
     
     const checkBookings = (bookings, start, end) => {
-        const bookingsArr = [];
-        for (let booking of bookings) {
-            if ((Date.parse(end) > Date.parse(booking.startTime) && Date.parse(start) < Date.parse(booking.endTime)) ) {
-                    bookingsArr.push(booking)
-            }
-        } return bookingsArr; 
+        const bookingsArr = bookings.filter(booking => (Date.parse(end) > Date.parse(booking.startTime) 
+        && Date.parse(start) < Date.parse(booking.endTime)));
+        return bookingsArr;
     }
 
     const getBookedTables = (bookings, start, end) => {
@@ -45,7 +42,6 @@ const FetchTable = ({restaurantTables, sendStartTime, sendEndTime, sendNoOfCusto
             }
         } return tablesArr;
     }
-
 
     const tableList = restaurantTables.map(restaurantTable => {
         return (
