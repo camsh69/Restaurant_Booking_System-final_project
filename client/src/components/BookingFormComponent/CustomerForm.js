@@ -66,7 +66,7 @@ const CustomerForm = ({ newCustomer, customers, sendName, sendPhoneNumber, sendE
             <form onSubmit={handleSubmit}>
                 <h1>Add a Customer</h1>
                
-                    <label htmlFor="name">Guest Name:</label>
+                    <label htmlFor="name">Contact Name*:</label>
                     <input
                         type="text"
                         id="name"
@@ -77,13 +77,12 @@ const CustomerForm = ({ newCustomer, customers, sendName, sendPhoneNumber, sendE
                     />
                
 
-                   <label htmlFor="phoneNumber">Guest Phone number:</label>
+                   <label htmlFor="phoneNumber">Phone number:</label>
                     <input
                         type="phoneNumber"
                         id="phoneNumber"
                         name="phoneNumber"
                         value={phoneNumber}
-                        required
                         onChange={handlePhoneNumberChange}
                     />
                     <br />
@@ -92,13 +91,12 @@ const CustomerForm = ({ newCustomer, customers, sendName, sendPhoneNumber, sendE
                     
 
 
-                    <label htmlFor="email">Guest Email:</label>
+                    <label htmlFor="email">Email:</label>
                     <input
                         type="email"
                         id="email"
                         name="email"
                         value={email}
-                        required
                         onChange={handleEmailChange}
                     /><br/>
                
