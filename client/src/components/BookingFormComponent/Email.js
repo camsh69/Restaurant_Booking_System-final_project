@@ -36,25 +36,29 @@ const Email = ({ bookingFormComplete, bookings, startTime, name, email }) => {
         <div className='form-container'>
           <div id = "form">
         
-          Email Booking Confirmation:
+          
        
         <form id="emailForm" onSubmit={sendEmail}>
           <div className="field">
           <label>Booking Ref:</label>
           <input type="text" name="booking_ref" value={bookings[index].id} readOnly required />
           </div>
+          <br/>
            <div className="field">
            <label>Name:</label>
           <input type="text" name="to_name" value={name} readOnly required />
           </div>
+          <br/>
           <div className="field">
           <label>Email:</label>
           <input type="email" name="to_email" value={email} readOnly required />
           </div>
+          <br/>
           <div className="field">
           <label>Message:</label>
           <textarea name="message" cols="50" rows="10" value={`Booking on ${start.toLocaleString()} confirmed.`} readOnly required/>
           </div>
+          <br/>
           <input className='style-button' type="submit" value="Send Email Confirmation" autoFocus/>
         </form>
 
