@@ -46,7 +46,7 @@ const CustomerForm = ({ newCustomer, customers, sendName, sendPhoneNumber, sendE
         !fetchTableComplete ? "" : 
         
         <div className='form-container'>
-            <div id = "form">
+            <div id = "form-customer">
                 <div className='inputs'>
         
                 {/* text box of laoyal with onChange event to hamdleLoyalty */}
