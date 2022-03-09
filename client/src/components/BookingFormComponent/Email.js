@@ -1,13 +1,12 @@
 import React from 'react';
 import emailjs from 'emailjs-com';
 import emailkey from '../../emailkey';
-import './email.css';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 
 const fireSwal = withReactContent(Swal);
 
-const Email = ({ bookingFormComplete, bookings }) => {
+const Email = ({ bookingFormComplete, bookings, startTime, name, email }) => {
 
     function sendEmail(e) {
         e.preventDefault();    
@@ -29,7 +28,7 @@ const Email = ({ bookingFormComplete, bookings }) => {
 
       const index = bookings.length -1;
 
-      const start = new Date(bookings[index].startTime);
+      const start = new Date(startTime);
 
       return (
         !bookingFormComplete ? "" :
@@ -46,22 +45,22 @@ const Email = ({ bookingFormComplete, bookings }) => {
           </div>
            <div className="field">
            <label>Name:</label>
-          <input type="text" name="to_name" value={bookings[index].customer.name} readOnly required />
+          <input type="text" name="to_name" value={name} readOnly required />
           </div>
           <div className="field">
           <label>Email:</label>
-          <input type="email" name="to_email" value={bookings[index].customer.email} readOnly required />
+          <input type="email" name="to_email" value={email} readOnly required />
           </div>
           <div className="field">
           <label>Message:</label>
-          <textarea name="message" cols="50" rows="10" value={`Booking on ${start.toLocaleString()} confirmed.`} required/>
+          <textarea name="message" cols="50" rows="10" value={`Booking on ${start.toLocaleString()} confirmed.`} readOnly required/>
           </div>
-          <input type="submit" value="Send Email Confirmation" autofocus/>
+          <input className='style' type="submit" value="Send Email Confirmation" autoFocus/>
         </form>
 
         <br/>
         <div>
-          <button type='button' onClick={handleClick}>Clear Form</button>
+          <button className='style-button'  type='button' onClick={handleClick}>Clear Form</button>
         </div>
         </div>
         </div>

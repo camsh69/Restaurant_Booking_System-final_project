@@ -1,41 +1,31 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
-const BookingForm = ({ newBooking, email, phoneNumber, name, customers, startTime, endTime, noOfCustomers, tables, customerId, loyaltyCard, completeFlag, customerFormComplete, bookings }) => {
+const fireSwal = withReactContent(Swal);
+
+const BookingForm = ({ newBooking, email, phoneNumber, name, customers, startTime, endTime, noOfCustomers, tables, customerId, loyaltyCard, completeFlag, customerFormComplete }) => {
 
   const [message, setMessage] = useState("");
 
-
-
   const handleMessageChange = (ev) => setMessage(ev.target.value);
 
-  function getCountOfBookingsForACustomer(customerId, bookings) {
-    console.log("customer id", customerId, "bookings", bookings)
-    let visitCount = 0
-    for (let booking of bookings) {
-      if (booking.customer.id === customerId) {
-        visitCount += 1
-      }
-    }
-    console.log("visit count", visitCount)
-    if (visitCount > 0 && visitCount % 2 == 0) {
-      alert("Welcome again, give them a discount!");
+  const getCountOfBookingsForACustomer = (customerId, customers) => {
+    for (let customer of customers) {
+      if (customer.id === customerId && customer.bookings.length % 2 === 0) {
+        alert("Welcome again, give them a discount!");
+      } 
     }
   }
 
   const handleSubmit = ev => {
     ev.preventDefault();
 
-    
-
     completeFlag(true);
 
-
-    const index = customers.length-1;
-    getCountOfBookingsForACustomer(customers[index].id, bookings)
-
-
+    getCountOfBookingsForACustomer(customerId, customers);
     
-    
+    const index = customers.length-1; 
 
     if(customerId === "") {
       newBooking({
@@ -69,9 +59,6 @@ const BookingForm = ({ newBooking, email, phoneNumber, name, customers, startTim
         receipt: null,
         tables: tables      
       });
-
-
-      // window.location.reload()
   }
 }
   
@@ -94,11 +81,10 @@ const BookingForm = ({ newBooking, email, phoneNumber, name, customers, startTim
           name="message"
           value={message}
           onChange={handleMessageChange}
-          autofocus
         />
       </div>
 
-      <input type="submit" name="submit" value="Create Booking" />
+      <input className='style' type="submit" name="submit" value="Create Booking" autoFocus/>
     </form>
   </div>
   </div>

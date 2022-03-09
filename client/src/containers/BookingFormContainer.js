@@ -28,9 +28,9 @@ const BookingFormContainer = ({ newCustomer, newBooking, customers, restaurantTa
     
       <CustomerForm newCustomer={newCustomer} newBooking= {newBooking} customers ={customers} sendName={name => setName(name)} sendEmail={email => setEmail(email)} sendPhoneNumber={phoneNo => setPhoneNumber(phoneNo)} sendCustomerID={customerID => setCustomerId(customerID)} sendLoyaltyCard={loyaltyCard => setLoyaltyCard(loyaltyCard)} fetchTableComplete={fetchTableComplete} completeFlag={flag => setCustomerFormComplete(flag)} bookings={bookings}/>
 
-      <BookingForm newBooking={newBooking} email={email} phoneNumber={phoneNumber} name={name} customerId={customerId} customers={customers} startTime={startTime} endTime={endTime} noOfCustomers={noOfCustomers} tables={tables} loyaltyCard={loyaltyCard} customerFormComplete={customerFormComplete} completeFlag={flag => setBookingFormComplete(flag)} bookings={bookings}/>
+      <BookingForm newBooking={newBooking} email={email} phoneNumber={phoneNumber} name={name} customerId={customerId} customers={customers} startTime={startTime} endTime={endTime} noOfCustomers={noOfCustomers} tables={tables} loyaltyCard={loyaltyCard} customerFormComplete={customerFormComplete} completeFlag={flag => setBookingFormComplete(flag)} bookings={bookings} />
 
-      <Email bookingFormComplete={bookingFormComplete} bookings={bookings}/>
+      <Email bookingFormComplete={bookingFormComplete} bookings={bookings} startTime={startTime} name={name} email={email} />
     </div>
   )
 }
