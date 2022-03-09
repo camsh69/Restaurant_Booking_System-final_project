@@ -8,6 +8,11 @@ Our task was to develop an app for newly open restaurant so it can do customer r
 <h3>react-big-calender</h3>
 <h3>sweetalert2</h3>
 <h3>sweetalert2-react-content</h3>
+<h2>To Run APP On backEnd </h2>
+<h4> Open "Restaurant Booking App" in IntelliJe and go to the server folder and run ther restaurantBookingService</h4>
+<h2>To Run App On Front End</h2>
+<h4>First go to client folder and run npm install command</h4>
+  
 
                                     
  
