@@ -68,6 +68,7 @@ const FetchTable = ({restaurantTables, sendStartTime, sendEndTime, sendNoOfCusto
         <div className='start-time'>
             <label htmlFor='datetime'>Start Time: </label>
             <input
+                className='input'
                 name="datetime"
                 type="datetime-local"
                 value={startTime}
@@ -80,6 +81,7 @@ const FetchTable = ({restaurantTables, sendStartTime, sendEndTime, sendNoOfCusto
         <div className='end-time'>
             <label htmlFor='datetime'>End Time: </label>
             <input
+                className='input'
                 name="datetime"
                 type="datetime-local"
                 value={endTime}
@@ -93,6 +95,7 @@ const FetchTable = ({restaurantTables, sendStartTime, sendEndTime, sendNoOfCusto
         <div className='no-of-guest'>
         <label htmlFor='noOfGuest'>No Of Guests</label>
         <input
+            className='input'
             name="NoOfGuest"
             type="number"
             value={noOfCustomers}

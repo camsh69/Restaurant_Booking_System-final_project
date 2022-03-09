@@ -52,6 +52,7 @@ const CustomerForm = ({ newCustomer, customers, sendName, sendPhoneNumber, sendE
                 {/* text box of laoyal with onChange event to hamdleLoyalty */}
                 <label htmlFor='loyaltyCard'>Loyalty Card Number :</label>
                 <input
+                    className='input'
                     type="text"
                     id="loyalty_card"
                     name="loyalty_card"
@@ -68,6 +69,7 @@ const CustomerForm = ({ newCustomer, customers, sendName, sendPhoneNumber, sendE
                
                     <label htmlFor="name">Guest Name:</label>
                     <input
+                        className='input'
                         type="text"
                         id="name"
                         name="name"
@@ -79,6 +81,7 @@ const CustomerForm = ({ newCustomer, customers, sendName, sendPhoneNumber, sendE
 
                    <label htmlFor="phoneNumber">Guest Phone number:</label>
                     <input
+                        className='input'
                         type="phoneNumber"
                         id="phoneNumber"
                         name="phoneNumber"
@@ -94,6 +97,7 @@ const CustomerForm = ({ newCustomer, customers, sendName, sendPhoneNumber, sendE
 
                     <label htmlFor="email">Guest Email:</label>
                     <input
+                        className='input'
                         type="email"
                         id="email"
                         name="email"

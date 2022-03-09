@@ -75,39 +75,39 @@ const fireSwal = withReactContent(Swal);
     <br />
             <div>
                 <label htmlFor="id">Booking Reference: </label>
-                <input disabled name="id" type="number" value={selectedBooking.id ?? ""} id="id"/>
+                <input className='input' disabled name="id" type="number" value={selectedBooking.id ?? ""} id="id"/>
             </div>
             <br />
             <div>
                 <label htmlFor="customerName">Customer name: </label>
-                <input disabled name="customerName" type="text" value={selectedCustomer ?? ""} id="customerName"/>
+                <input className='input' disabled name="customerName" type="text" value={selectedCustomer ?? ""} id="customerName"/>
             </div>
             <br />
 
             <div>
                 <label htmlFor="startTime">Start Time: </label>
-                <input onChange={handleChange} name="startTime" type="datetime-local" value={selectedBooking.startTime ?? ""} id="startTime"/>
+                <input className='input' onChange={handleChange} name="startTime" type="datetime-local" value={selectedBooking.startTime ?? ""} id="startTime"/>
             </div>
             <br />
 
             <div>
                 <label htmlFor="endTime">End Time: </label>
-                <input onChange={handleChange} name="endTime" type="datetime-local" value={selectedBooking.endTime ?? ""} id="endTime"/>
+                <input className='input' onChange={handleChange} name="endTime" type="datetime-local" value={selectedBooking.endTime ?? ""} id="endTime"/>
             </div>
             <br />
 
             <div>
                 <label htmlFor="diners">Diners: </label>
-                <input onChange={handleChange} name="diners" type="number" value={selectedBooking.diners ?? ""} id="diners"/>
+                <input className='input' onChange={handleChange} name="diners" type="number" value={selectedBooking.diners ?? ""} id="diners"/>
             </div>
             <br />
 
             <div>
                 <label htmlFor="message">Message: </label>
-                <input onChange={handleChange} name="message" type="text" value={selectedBooking.message ?? ""} id="message"/>
+                <input className='input' onChange={handleChange} name="message" type="text" value={selectedBooking.message ?? ""} id="message"/>
             </div>
             
-            <input className='style' type="submit" value="Update" id="save"/>
+            <input className='style-button' type="submit" value="Update" id="save"/>
         </form>
         </div>
     </div>

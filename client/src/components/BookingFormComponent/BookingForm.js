@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
+import "../../Styles/TextArea.css"
 
 const fireSwal = withReactContent(Swal);
 
@@ -75,7 +76,10 @@ const BookingForm = ({ newBooking, email, phoneNumber, name, customers, startTim
 
       <div className="group">
         <label htmlFor="message">Add message here:</label>
-        <input
+        <textarea
+          className='textArea'
+          cols="50" 
+          rows="10"
           type="message"
           id="message"
           name="message"

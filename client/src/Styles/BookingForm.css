@@ -22,7 +22,7 @@
     margin-top: 30px;
   }
     
-  input {
+  .input {
     background: #ECF0F3;
     padding: 10px;
     padding-left: 20px;
@@ -30,7 +30,7 @@
     width: 400px;
     font-size: 14px;
     border-radius: 5px;
-    /* box-shadow: inset 6px 6px 6px #cdcecf, inset -6px -6px 6px white; */
+    box-shadow: inset 6px 6px 6px #cdcfcf, inset -6px -6px 6px white;
     text-align: center;
 
   }
@@ -42,7 +42,7 @@
     outline: none;
     box-sizing: border-box;
   }
-  input .style-button {
+  .input .style-button {
     display: block;
     width: 100%;
     padding: 0;
@@ -56,7 +56,7 @@
   label:nth-of-type(2) {
     margin-top: 20px;
   }
-  input::placeholder {
+  .input::placeholder {
     color: gray;
   } 
    
@@ -107,5 +107,9 @@
   border: solid black;
   background: #ECF0F3;
   margin-top: 5%;
-
   }
+
+  .table-list{
+      text-align: justify;
+  }
+  

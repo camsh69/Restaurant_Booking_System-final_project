@@ -7,7 +7,7 @@ const AddToTableList = ({restaurantTable, restaurantTableAdded}) => {
   return (
     <div className="checkBoxAndText">
         {/* <button type = "check"    className='add-table' onClick={handleOnClick}>+</button> */}
-        <input className='addedTable' type="checkbox"  onClick={handleOnClick}/>
+        <input type="checkbox" className='addedTable' onClick={handleOnClick}/>
     </div>
   )
 }
