@@ -7,8 +7,8 @@ const AddToTableList = ({restaurantTable, restaurantTableAdded}) => {
   
     
   return (
-    <div className="checkBoxAndText">
-        <input className='addedTable' type="checkbox"  onChange={handleChange}/>
+    <div className="table">
+        <input className='style-checkbox' type="checkbox"  onChange={handleChange}/>
     </div>
   )
 }
