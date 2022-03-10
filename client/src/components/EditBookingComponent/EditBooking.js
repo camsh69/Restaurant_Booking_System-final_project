@@ -19,7 +19,7 @@ const fireSwal = withReactContent(Swal);
 
   const bookingNode = bookings.map(booking => 
     {
-      if(toTimestamp(booking.startTime) <= Date.now()){
+      if(toTimestamp(booking.startTime) >= Date.now()){
       
       return <Booking handleDeleteClick={handleDeleteClick} passedDownSetBooking={(value) => setSelectedBooking(value)}
       passedDownSetCustomer={(value) => setSelectedCustomer(value)}
