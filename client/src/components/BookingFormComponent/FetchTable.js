@@ -28,18 +28,22 @@ const FetchTable = ({restaurantTables, sendStartTime, sendEndTime, sendNoOfCusto
         return (
             <li key={restaurantTable.id}>
             <span> Table no:  {restaurantTable.id}  covers:  {restaurantTable.covers} </span>
-             <AddToTableList  restaurantTable={restaurantTable} restaurantTableAdded={restaurantTable => onClick(restaurantTable)}  />
+             <AddToTableList  restaurantTable={restaurantTable} restaurantTableAdded={(checked, table) => onChange(checked, table)}  />
             </li>
           );
     })
 
-    const onClick = table => {
-        if(!tables.includes(table)){
-          const updatedTableList = [...tables, table];
-          setTables(updatedTableList)
-        }
-      }
 
+    const onChange = (checked, table) => {
+        if (checked) {
+            setTables([...tables, table]);
+        } else {
+          const tableTemp = [...tables];  
+          const index = tableTemp.indexOf(table);
+          tableTemp.splice(index,1);
+          setTables(tableTemp);
+      }
+    }
 
     const handleConfirm = () => {
 
