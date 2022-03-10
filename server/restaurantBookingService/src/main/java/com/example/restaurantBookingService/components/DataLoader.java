@@ -51,7 +51,7 @@ public class DataLoader implements ApplicationRunner {
         RestaurantTable table2 = new RestaurantTable(6);
         restaurantTableRepository.save(table2);
 
-        RestaurantTable table3 = new RestaurantTable(10);
+        RestaurantTable table3 = new RestaurantTable(4);
         restaurantTableRepository.save(table3);
 
         RestaurantTable table4 = new RestaurantTable(3);

@@ -1,0 +1,9 @@
+.textArea{
+    background: #ECF0F3;
+    padding: 10px;
+    padding-left: 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    box-shadow: inset 6px 6px 6px #cdcfcf, inset -6px -6px 6px white;
+    
+}

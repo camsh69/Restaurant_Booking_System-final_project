@@ -12,10 +12,8 @@
     height: 50px;
     font-size: 14px;
     border-radius: 5px;
-    /* box-shadow: inset 6px 6px 6px #296e95, inset -6px -6px 6px white; */
+    box-shadow: inset 6px 6px 6px #296e95, inset -6px -6px 6px white;
     text-align: left;
-    /* position:relative; */
-
 }
 /* 
 .checkBoxAndText{
@@ -23,3 +21,25 @@
     align-items: baseline;
 
 } */
+.table {
+    display: inline-block;
+    width: 60%;
+    padding: none;
+    border : none;
+    outline: none;
+    box-sizing: border-box;
+    padding: 10px;
+    height: 50px;
+    font-size: 14px;
+    border-radius: 5px;
+    text-align: center; 
+}
+.style-checkbox{
+   top: 0;
+   left: 0;
+   height: 25px;
+   width: 25px;
+   background-color: #eee;
+}
+
+ 
