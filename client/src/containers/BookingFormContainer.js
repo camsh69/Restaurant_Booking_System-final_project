@@ -24,7 +24,7 @@ const BookingFormContainer = ({ newCustomer, newBooking, customers, restaurantTa
 
   return (
     <div>
-      <FetchTable restaurantTables={restaurantTables} sendStartTime={startTime => setStartTime(startTime)} sendEndTime={endTime => setEndTime(endTime)} sendNoOfCustomers={noOfCustomers => setNoOfCustomer(noOfCustomers)} sendTables={tables => setTables(tables)} completeFlag={flag => setFetchTableComplete(flag)}/>
+      <FetchTable restaurantTables={restaurantTables} sendStartTime={startTime => setStartTime(startTime)} sendEndTime={endTime => setEndTime(endTime)} sendNoOfCustomers={noOfCustomers => setNoOfCustomer(noOfCustomers)} sendTables={tables => setTables(tables)} completeFlag={flag => setFetchTableComplete(flag)} bookings={bookings}/>
     
       <CustomerForm newCustomer={newCustomer} newBooking= {newBooking} customers ={customers} sendName={name => setName(name)} sendEmail={email => setEmail(email)} sendPhoneNumber={phoneNo => setPhoneNumber(phoneNo)} sendCustomerID={customerID => setCustomerId(customerID)} sendLoyaltyCard={loyaltyCard => setLoyaltyCard(loyaltyCard)} fetchTableComplete={fetchTableComplete} completeFlag={flag => setCustomerFormComplete(flag)} bookings={bookings}/>
 
