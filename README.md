@@ -12,6 +12,13 @@ Our task was to develop an app for newly open restaurant so it can do customer r
 <h4> Open "Restaurant Booking App" in IntelliJe and go to the server folder and run ther restaurantBookingService</h4>
 <h2>To Run App On Front End</h2>
 <h4>First go to client folder and run npm install command</h4>
+<h4> In src folder create emailKey.js file </h4>
+<h4>To make email functionality work You need to sign up for Emailjs account and add service provider and add template and finely paste the following code in emailkey.js file :
+export default {
+    SERVICE_ID: `your-service-id `,
+    TEMPLATE_ID: `your-template-id`,
+    USER_ID: `your-user-id`
+    }</h4>
   
 
                                     
