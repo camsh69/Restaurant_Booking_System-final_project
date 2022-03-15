@@ -16,7 +16,7 @@ For email functionality to work, sign up for an EmailJS account (https://www.ema
 
 ## How to run
 - Open the server/restaurantBookingService files in IntelliJ
-- In main/java folder, right click on RestaurantBookingServiceApplication file and select Run 'RestaurantBook...main()'
+- In src/main/java folder, right click on RestaurantBookingServiceApplication file and select Run 'RestaurantBook...main()'
 
 
 
