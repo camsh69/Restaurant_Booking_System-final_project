@@ -4,7 +4,7 @@
 - Java Spring Boot, React
 
 ## Important
-For app to work create an emailkey.js file in src folder.  
+For app to work create an emailkey.js file in src folder (this has been excluded in the .gitignore file to protect personal keys).  
 
 For email functionality to work, sign up for an EmailJS account (https://www.emailjs.com/) and choose a service provider, create a template and copy the following info from EmailJS into the emailkey.js file:
 
