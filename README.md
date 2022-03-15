@@ -6,7 +6,7 @@
 ## Important
 For app to work create an emailkey.js in src folder.  
 
-For email functionality work, sign up for EmailJS (https://www.emailjs.com/) account and choose a service provider, create a template and copy the following info from EmailJS into the emailkey.js file :
+For email functionality to work, sign up for EmailJS (https://www.emailjs.com/) account and choose a service provider, create a template and copy the following info from EmailJS into the emailkey.js file :
 
 `export default {`
 
