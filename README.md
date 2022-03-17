@@ -1,4 +1,4 @@
-# Group JavaScript Project - Full Stack Stock Tracker App
+# Final Group Project - Restaurant Table Booking Application
 
 ## Technologies used
 - Java Spring Boot, React
